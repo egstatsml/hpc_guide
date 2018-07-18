@@ -3,9 +3,9 @@
 #PBS -N install_packages
 #PBS -l ncpus=1
 #PBS -l mem=2GB
-#PBS -l walltime=00:01:00
-#PBS -o bt_20000_stdout.out
-#PBS -e bt_20000_stderr.out
+#PBS -l walltime=20:00:00
+#PBS -o install_packages_stdout.out
+#PBS -e install_packages_stderr.out
 
 # More info on PBS directives can be found here
 # http://qcd.phys.cmu.edu/QCDcluster/pbs/run_serial.html
@@ -77,8 +77,14 @@ run_program(){
     #make sure we change to the current directory
     #where this bash job script is
     cd $PBS_O_WORKDIR
-    #now run the R script
-    ./breast_cancer_bt.R --ntrees 20000   
+    ../install_r_packages.R
+    #this script installed all of the packages locally,
+    #since you do not have root access to HPC.
+    #This just means we need to let R now where we installed
+    #the new packages. This next command will save the variable
+    #in an R envirionment file to tell us where it is stored
+    echo 'R_LIBS_USER="~/R/library"' >  ~/.Renviron
+    
 }
 
 
