@@ -1,0 +1,15 @@
+\section{Modules}
+Now that you have transferred your code across over to HPC, you can start loading and installing the required packages you need. HPC has many programs already installed, though they aren't initially loaded when you log in. These pre-installed programs are stored as \textit{modules} that need to be first loaded before you can use them. To see the modules currently installed on HPC, run the command,
+%
+%
+\begin{lstlisting}[language=bash, frame=single]
+  #see what modules are available
+  module avail
+\end{lstlisting}
+From the output of this, you may begin to appreciate why not all of the packages are loaded on startup, there is an awful lot of them. While it may be 
+% 
+%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

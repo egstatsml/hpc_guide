@@ -1,0 +1,10 @@
+
+Whilst it may seem like ample resources are available, they are finite and accessed by many people, thus access to these services needs to be managed. Access to computing resources is scheduled by the Portable Batch System (PBS). Before you run any software, you must tell the PBS manager what resources you require and how long you will need them for.
+
+The HPC system runs on an openSUSE operating system \cite{openSUSE}, which is a distribution based of the Linux Kernel.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

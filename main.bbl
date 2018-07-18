@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global}
+    \entry{putty}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e1f2616e32f74ae07dd3a6d988339af0}{%
+           family={Tatham},
+           family_i={T\bibinitperiod},
+           given={Simon},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1f2616e32f74ae07dd3a6d988339af0}
+      \strng{fullhash}{e1f2616e32f74ae07dd3a6d988339af0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{PuTTY}
+      \field{year}{2018}
+      \verb{url}
+      \verb https://www.putty.org/
+      \endverb
+    \endentry
+    \entry{openSUSE}{online}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{openSUSE}
+      \field{year}{2018}
+      \verb{url}
+      \verb https://www.opensuse.org/
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

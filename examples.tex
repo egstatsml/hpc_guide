@@ -1,0 +1,18 @@
+\section{Examples}
+Now we are set up on HPC and have installed some of the packaged we need, we will go through some examples on how to get the most out of HPC.
+%
+%
+%
+\subsection{Multicore Processing - Let the OS do the Hard Work}
+%
+%
+Many times when we want to process a large data set, we want to do a single task to each element in the data set, and sometimes this individual operation can be computationally expensive. An example is preprocessing all images in a large data set to remove certain artefacts, convert to a more convenient format etc.. It would be beneficial to process many of these items in the many available CPU cores on HPC. One method is to write a multi-threaded/multi-process script (not a simple task in R) to process the data. Another and far easier way to handle this is to create a script that processes a single item in the data set, and submit this job many times to the HPC cluster with a different observation from the data set as an input example. An example of this is provided in <HERE>.
+
+% 
+%
+%
+%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
