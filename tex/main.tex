@@ -1,0 +1,143 @@
+\documentclass[oneside]{article}
+\usepackage{graphicx} % Required for including images
+\usepackage[paper=A4,pagesize]{typearea}
+% \usepackage{subfig} % Required for creating figures with multiple parts (subfigures)
+\usepackage{setspace}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+\usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
+\usepackage{csquotes}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{epstopdf}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+} 
+\usepackage{polynom}
+\usepackage{floatrow}
+\usepackage{multirow}
+\usepackage[british]{babel} %for hyphenations etc.
+\usepackage{pdflscape}
+\usepackage{ifthen}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows.meta,quotes,shadows,decorations.pathreplacing,positioning,fadings}
+\usepackage{cfr-lm} %imported for neural net drawing
+% import this so we use the nice TeX font
+\usepackage{lmodern}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+  }
+\hypersetup{linktocpage} %so TOC only links the page numbers
+\usepackage{nomencl}
+\makenomenclature
+%% Grouping for Nomenclature
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{A}{Abbreviations}{%
+  \ifstrequal{#1}{S}{Symbols}{}}%
+]}
+% Table float box with bottom caption, box width adjusted to content
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+\usepackage{blindtext}
+\usepackage{array}
+% 
+%MY NEW COMMANDS
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\E}{\mathbb{E}}
+% Table alignment
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%
+% Section referencing
+\newcommand{\sref}[1]{\S\ref{#1}}
+%
+%
+%Document specific settings
+\linespread{1.5}
+%macro so when \textcite or \citeauthor is used, the et al. will appear in italicsc
+%
+\usepackage[style=ieee, backend=biber,
+mincitenames=1,maxcitenames=2,
+isbn=false, doi=false, url=false]{biblatex}
+\addbibresource{ref.bib}
+\DefineBibliographyStrings{english}{%
+    andothers = {\em et\addabbrvspace al\adddot}
+  }
+
+\renewbibmacro{in:}{}
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+%
+% 
+%
+\fancypagestyle{main}{
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\leftmark}{\thepage}}
+\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\thepage}{}}
+}
+%so footnotes don't run over to next pages
+\interfootnotelinepenalty=10000
+%
+%
+\fancypagestyle{nomenclature}{
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{NOMENCLATURE}{\thepage}}
+\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\thepage}{}}
+}
+%
+\begin{document} 
+%
+%Set the page style to main
+\pagestyle{main}
+%
+%
+%
+\title{BRAG Guide to HPC}
+\maketitle
+\tableofcontents
+%
+%
+%
+\input{preface.tex}
+%
+%
+\input{intro.tex}
+%
+%
+\input{running.tex}
+%
+%
+\input{examples.tex}
+%
+%
+\newpage
+%
+%
+\printbibliography
+%
+%
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
