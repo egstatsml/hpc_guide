@@ -30,5 +30,8 @@ packages <- c('tidyverse',
               'broom',
               'testthat',
               'stringr',
-              'magrittr')
+              'magrittr',
+              'mlbench',
+              'optparse',
+              'gbm')
 ipak(packages)
