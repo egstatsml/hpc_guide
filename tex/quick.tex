@@ -1,0 +1,59 @@
+\section{Quick Guide}
+
+\begin{table}[!h]
+  \begin{tabular}{ L{3cm}  L{9cm}}
+    \hline
+    \\
+    \texttt{Command} & Description/Example \\
+    \hline \hline
+    \texttt{cat} & Display contents of a file \\
+                     & \texttt{cat <path\_to\_file>}\\[2ex]
+    
+    \texttt{cd} & Change Directory
+    \\
+                     & \texttt{cd $\sim$   \#change to home directory}\\
+                     & \texttt{cd ..  \#move up one directory}\\[2ex]
+    \texttt{cp} & Copy file
+    \\
+                     &\texttt{cp <path\_original\_file> <path\_new\_file>}
+    \\[2ex]
+    \texttt{ls} & List files in current directy
+    \\[4ex]
+    \texttt{man} & Manual for a command\\
+                     & \texttt{man ls}
+    \\[2ex]
+    \texttt{module avail} & List all of the available modules
+    \\[4ex]
+    \texttt{module load} & Load a specific module\\
+                     & \texttt{module load atg/R/3.4.1-foss-2016a}    
+    \\[2ex]
+    \texttt{module purge} & Remove all loaded modules\\
+    \\[2ex]
+    \texttt{mv} & Move a file\\
+                     &\texttt{mv <path\_original\_file> <path\_new\_file>}
+    \\[2ex]
+    \texttt{rm} & Remove a file permanently\\
+                     & \texttt{rm <path\_to\_file>}
+    \\[2ex]
+    \texttt{qdel} & Delete a specific job that was submitted to the queue\\
+                     & \texttt{qdel <job\_id\_number> \#find number with qstat}
+    \\[2ex]
+    \texttt{qstat} & View Running jobs \\
+                     & \texttt{qstat -u <your\_QUT\_usernamer>}
+    \\[2ex]
+    \texttt{qsub} & Submit a job to the queue\\
+                     & \texttt{\# Interactive Job}
+    \\
+                     & \texttt{qsub -I -S /bin/bash -l walltime=HH:MM:SS,mem=XXXg,ncpus=YYY -N ZZZ}
+    \\
+                     & \texttt{\# batch job}
+    \\
+    & \texttt{qsub <path\_to\_batch\_script>}
+      \\
+    \hline
+  \end{tabular}
+\end{table}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
