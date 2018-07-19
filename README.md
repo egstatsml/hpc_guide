@@ -1,4 +1,4 @@
-# A Brag Guide To HPC
+# A BRAG Guide To HPC
 
 This repo provides a quick reference guide on how to access and use the HPC facilities at QUT. Example scripts are supplied to install relevent packages, and demonstrate how to submit jobs to HPC.
 
