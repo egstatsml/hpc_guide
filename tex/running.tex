@@ -25,13 +25,15 @@ We will first start with interactive jobs, and then show how we can move our wor
 %
 \subsection{Interactive Jobs}
 To submit a job to HPC, we use the \texttt{qsub} command, along with a few arguments to tell the scheduler what resources we require, and how long we need them for. To submit an interactive job, run the following command,
-\begin{lstlisting}[language=bash, frame=single]
+\newpage
+\begin{lstlisting}[language=bash, frame=single, breaklines=true]
   #submit an interactive job to HPC
   #replace the HH:MM:SS with the amount of time you
   #expect your job to run
   #Replace XXX with the amount of RAM you need
   #Replace YYY with the number of CPUS you need
-  #Replace ZZZ with the name of your job, you can call it whatever you like :)
+  #Replace ZZZ with the name of your job
+  #you can call it whatever you like :)
   qsub -I -S /bin/bash -l walltime=HH:MM:SS,mem=XXXg,ncpus=YYY -N ZZZ
 \end{lstlisting}
 %
@@ -79,12 +81,9 @@ For this guide, we will use R as an example, though you can adapt it for other p
 \subsection{Installing R Packages}
 If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \texttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
 \begin{lstlisting}[language=bash, frame=single]
-  #change to where you cloned the repo
-  #if you followed the previous examples,
-  #it will be cloned into your home directory
-
   #change to home directory
   cd ~
+  git clone https://github.com/ethangoan/hpc_guide  
   #change directory to the repo
   cd hpc_guide
   #now run the install script
@@ -124,8 +123,13 @@ The main differences here is the first line which is called the Shebang. This MU
 Further down in the script you will see helper functions that will load all of the modules we need (for this example we only need the R module) and a function which invokes the R script to install the packages we need. These helper functions are called at the end of the script when the job has been submitted and accepted by the scheduler. We can submit this job using the following command,
 %
 %
+\newpage
 \begin{lstlisting}[language=bash, frame=single]
-  #change to the directory where you cloned the repo
+  #clone the guide repo into your home directory
+  #if you haven't already
+  cd ~
+  git clone https://github.com/ethangoan/hpc_guide
+  #change into repo directory
   cd ~/hpc_guide
   #change to the directory where the config file is
   cd ./batch_jobs

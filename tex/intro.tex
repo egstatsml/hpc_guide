@@ -74,6 +74,7 @@ To get your code onto HPC, I would recommend simply using Git and cloning your r
 %
 You can clone your repo to HPC via the terminal that is connected to HPC by simply running the command,
 \begin{lstlisting}[language=bash, frame=single]
+  #change to the home directory
   git clone <remote_url_for_your_repo>
 \end{lstlisting}
 %
@@ -81,7 +82,9 @@ You can clone your repo to HPC via the terminal that is connected to HPC by simp
 It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here}. After you install the required programs, you can mount the directory creating a folder on your desktop where you want to mount your HPC files by running the following command,
 %
 %
-\begin{lstlisting}[language=bash, frame=single]
+\hspace*{-2cm}
+\begin{lstlisting}[language=bash, breaklines=true, frame=single]
+  #all of this in a single line/command
   sshfs -o allow_other <your_qut_username>@lyra.qut.edu.au:/home/<your_qut_username> <path_to_mount_location_on_desktop>
 \end{lstlisting}
 % 
