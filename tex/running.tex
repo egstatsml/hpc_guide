@@ -24,7 +24,7 @@ We will first start with interactive jobs, and then show how we can move our wor
 %
 %
 \subsection{Interactive Jobs}
-To submit a job to HPC, we use the \texttt{qsub} command, along with a few arguments to tell the scheduler what resources we require, and how long we need them for. To submit an interactive job, run the following command,
+To submit a job to HPC, we use the \hltexttt{qsub} command, along with a few arguments to tell the scheduler what resources we require, and how long we need them for. To submit an interactive job, run the following command,
 \newpage
 \begin{lstlisting}[language=bash, frame=single, breaklines=true]
   #submit an interactive job to HPC
@@ -48,7 +48,7 @@ Now that you have transferred your code across over to HPC and have been allocat
   #see what modules are available
   module avail
 \end{lstlisting}
-From the output of this, you may begin to appreciate why not all of the packages are loaded on startup, there is an awful lot of them. You can search through the output to find any modules you are interested in. Once you have found the module you are interested in, you can load it with the \texttt{module load} command. An example of common modules that might be helpful are listed here.
+From the output of this, you may begin to appreciate why not all of the packages are loaded on startup, there is an awful lot of them. You can search through the output to find any modules you are interested in. Once you have found the module you are interested in, you can load it with the \hltexttt{module load} command. An example of common modules that might be helpful are listed here.
 %
 %
 \begin{lstlisting}[language=bash, frame=single]
@@ -74,15 +74,17 @@ From the output of this, you may begin to appreciate why not all of the packages
 %
 %
 %
-For this guide, we will use R as an example, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \texttt{module load atg/R/3.4.1-foss-2016a}. Once loaded, you can start R by simply typing \texttt{R} into the terminal.
+For this guide, we will use R as an example, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \hltexttt{module load atg/R/3.4.1-foss-2016a}. Once loaded, you can start R by simply typing \hltexttt{R} into the terminal.
 %
 %
 %
 \subsection{Installing R Packages}
-If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \texttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
+\label{sec:install}
+If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \hltexttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
 \begin{lstlisting}[language=bash, frame=single]
   #change to home directory
   cd ~
+  
   git clone https://github.com/ethangoan/hpc_guide  
   #change directory to the repo
   cd hpc_guide
@@ -94,13 +96,22 @@ If you try and run an R script now, you will likely find that it will throw an e
 This will take a while to run (a few hours I think), so you can either leave your terminal open and let the program run, or you can use the instructions in the next section, where we will learn to submit a batch job that will install all of the packages for you.
 %
 %
+\begin{story}
+  \textbf{NOTE:}
+  \\
+  If you ran the above interactive script to install all the packages, once it is done there is one more command you will need to run. In this script, packages will be installed into \texttt{$\sim$R/library} directory. This needs to be done because installing packages on HPC is slightly different to that of your desktop machine, as you don't have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command
+  \\
+   \hspace*{1cm}\texttt{   echo'R\_LIBS\_USER="$\sim$/R/library"' >  ~/.Renviron}
+  \\
+  in the terminal. If you install all the packages using the batch script example in the next section, you won't need to run this command, it will do it for you.
+\end{story}
 \subsection{Submitting Batch Jobs}
 In the previous example, we saw how to submit an interactive job, load in R modules and install some base packages in an interactive session. We can achieve this same result by submitting a batch job, which will run on HPC without us having to intervene and leave the terminal open. Batch jobs are useful for programs that require a long time to run, since we can simply submit them and then forget about them (while they running at least).
 %
 \par
 % 
 %
-Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \texttt{batch\_jobs/install\_packages\_batch.sh} is supplied. This is a Bash script that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives.
+Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \hltexttt{batch\_jobs/install\_packages\_batch.sh} is supplied. This is a Bash script that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives.
 \begin{lstlisting}[language=bash, frame=single]
   #!/usr/bin/env bash
 
@@ -145,7 +156,7 @@ Once you have submitted the job, you can track all of your submitted jobs using 
 \end{lstlisting}
 %
 %
-This will give you information on all the jobs you have submitted. You will be able to see whether they have commenced running, or if they are still running and how long they have been running for. Once the program has finished running, you can view the output of the installation script with the \texttt{cat} command.
+This will give you information on all the jobs you have submitted. You will be able to see whether they have commenced running, or if they are still running and how long they have been running for. Once the program has finished running, you can view the output of the installation script with the \hltexttt{cat} command.
 \begin{lstlisting}[language=bash, frame=single]
   #check the output of the program
   cat install_packages_stdout.out
@@ -158,13 +169,13 @@ This will give you information on all the jobs you have submitted. You will be a
 \subsubsection{Installing More Packages}
 %
 %
-While running this installation script will install many of the most common packages, it is unlikely that it will install everything you require. To install more packages, I would suggest modifying the \texttt{instal\_r\_packages.R} script to include packages to want to install. There is a slight difference to installing packages when compared with a typical desktop machine you own. Since you won't have root/administrator access on HPC, you will need to install the packages locally. The \texttt{install\_r\_packages.R} installs the packages locally and sets the relevant path variables so that R can find the packages we installed. To install more packages, simply edit the \texttt{packages} vector in that script and resubmit the batch job using the same commands as before.
+While running this installation script will install many of the most common packages, it is unlikely that it will install everything you require. To install more packages, I would suggest modifying the \hltexttt{install\_r\_packages.R} script to include packages to want to install. There is a slight difference to installing packages when compared with a typical desktop machine you own. Since you won't have root/administrator access on HPC, you will need to install the packages locally. The \hltexttt{install\_r\_packages.R} installs the packages locally and sets the relevant path variables so that R can find the packages we installed. To install more packages, simply edit the \hltexttt{packages} vector in that script and resubmit the batch job using the same commands as before.
 %
 %
 \subsubsection{Quick Note on Python}
 %
 %
-While there aren't many pre-installed packages for R on HPC, there is many for Python. Popular packages such as Numpy, Matplotlib, Scipy, Sklearn etc. are already installed and have their own module. To find these modules, simply run the \texttt{module avail} command and search for the module you require. Then load the module using the same \texttt{module load} command used previously.
+While there aren't many pre-installed packages for R on HPC, there is many for Python. Popular packages such as Numpy, Matplotlib, Scipy, Sklearn etc. are already installed and have their own module. To find these modules, simply run the \hltexttt{module avail} command and search for the module you require. Then load the module using the same \hltexttt{module load} command used previously.
 %
 %
 %

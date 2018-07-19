@@ -2,6 +2,7 @@
 \usepackage{graphicx} % Required for including images
 \usepackage[paper=A4,pagesize]{typearea}
 % \usepackage{subfig} % Required for creating figures with multiple parts (subfigures)
+\usepackage{soul}
 \usepackage{setspace}
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
@@ -13,12 +14,30 @@
 \usepackage{epstopdf}
 \usepackage{subcaption}
 \usepackage{listings}
-\usepackage{xcolor}
-\lstset{basicstyle=\ttfamily,
+\usepackage[dvipsnames]{xcolor}
+\definecolor{Light}{gray}{.90}
+\lstset{basicstyle=\ttfamily\footnotesize,
   showstringspaces=false,
   commentstyle=\color{red},
-  keywordstyle=\color{blue}
-} 
+  keywordstyle=\color{blue},
+  backgroundcolor=\color{Light},
+}
+%for adding notes
+\usepackage[many]{tcolorbox}
+\newtcolorbox{story}[1][]{
+  width=\textwidth,
+  fonttitle=\bfseries,
+  breakable,
+  fonttitle=\bfseries\color{Brown},
+  colframe=SeaGreen,
+  colback=SeaGreen!10
+  #1}
+\newcommand\StoryNote[3][]{%
+  \marginnote[#1]{%
+    \makebox[0pt][l]{\begin{mynote}[label=#3]
+    #2
+    \end{mynote}}}%
+}
 \usepackage{polynom}
 \usepackage{floatrow}
 \usepackage{multirow}
@@ -66,7 +85,9 @@
 %
 % Section referencing
 \newcommand{\sref}[1]{\S\ref{#1}}
-%
+\sethlcolor{Light}
+\newcommand{\hltexttt}[1]{\texttt{\hl{#1}}}
+% 
 %
 %Document specific settings
 \linespread{1.5}
@@ -119,7 +140,9 @@ isbn=false, doi=false, url=false]{biblatex}
   \centering
   \includegraphics[scale=0.5]{./figs/qut.eps}
 \end{figure}
-
+\begin{center}
+  Version 0.1 - Last Updated 20/07/2018
+\end{center}
 \tableofcontents
 %
 \newpage

@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Modules}{9}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Installing R Packages}{11}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Installing R Packages}{10}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Submitting Batch Jobs}{11}{subsection.2.4}
 \defcounter {refsection}{0}\relax 
@@ -34,10 +34,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Multicore Processing - Let the OS do the Hard Work}{14}{subsection.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}Tips for bulk Submitting Jobs}{17}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Tips for bulk Submitting Jobs}{16}{subsubsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{18}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{17}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Quick Guide}{19}{section.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Other Tips}{20}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Installed R Packages aren't loading}{20}{subsection.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Installing More Packages}{20}{subsection.5.2}

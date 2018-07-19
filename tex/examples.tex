@@ -13,14 +13,14 @@ Many times when we want to process a large data set, we want to do a single task
 \par
 %
 %
-Another scenario when this type of processing is helpful is for model validation. Consider a case where you are commencing work on a new project, with a new type of data set and you want to run some experiments to bench mark the performance of different models with different parameters. For example, say you are fitting a mixture model, and you want to investigate the performance of the model for different number of mixtures, or a boosted regression tree, where you want to see how the accuracy of your predictions change when altering the parameters of the model. This type of experimentation can greatly benefit from this type of parallel processing, where you want to run several independent experiments with varying parameters. An example of how to do this is supplied in the \texttt{bt\_examples} directory of the repo for this guide, where we will fit many different boosted regression tree models to try and predict the presence of breast cancer based on biopsy information \cite{breast}.
+Another scenario when this type of processing is helpful is for model validation. Consider a case where you are commencing work on a new project, with a new type of data set and you want to run some experiments to bench mark the performance of different models with different parameters. For example, say you are fitting a mixture model, and you want to investigate the performance of the model for different number of mixtures, or a boosted regression tree, where you want to see how the accuracy of your predictions change when altering the parameters of the model. This type of experimentation can greatly benefit from this type of parallel processing, where you want to run several independent experiments with varying parameters. An example of how to do this is supplied in the \hltexttt{bt\_examples} directory of the repo for this guide, where we will fit many different boosted regression tree models to try and predict the presence of breast cancer based on biopsy information \cite{breast}.
 %
 %
 %
 \par
 %
 %
-When looking at the contents of the \texttt{bt\_examples} directory, you will find a single R script \texttt{breast\_cancer\_bt.R} and ten batch scripts \texttt{batch\_bt\_XXXX.sh}. Each of these batch scripts will invoke the \texttt{breast\_cancer\_bt.R} script, though each script will supply a different command line argument to specify the number of trees we want to use in the model. We can sumbit batch jobs for all of these scripts using the following commands,
+When looking at the contents of the \hltexttt{bt\_examples} directory, you will find a single R script \hltexttt{breast\_cancer\_bt.R} and ten batch scripts \hltexttt{batch\_bt\_XXXX.sh}. Each of these batch scripts will invoke the \hltexttt{breast\_cancer\_bt.R} script, though each script will supply a different command line argument to specify the number of trees we want to use in the model. We can sumbit batch jobs for all of these scripts using the following commands,
 \begin{lstlisting}[language=bash, frame=single]
   #Change to the bt_examples directory
   cd ~/hpc_guide/bt_examples/
@@ -42,6 +42,7 @@ After running this command, you will see that ten independent jobs have been sub
 Once all of the jobs are completed, you will see a number of log files have been created, a standard output and a standard error file for each job submitted. You can view the output of these files using the cat command.
 %
 %
+\newpage
 \begin{lstlisting}[language=bash, frame=single]
   #view the output of a single job
   cat bt_10000_stdout.out
@@ -54,17 +55,17 @@ Once all of the jobs are completed, you will see a number of log files have been
 %
 %
 %
-After running these jobs, you may want to remove the current stash of output files. You can do this using the \texttt{rm} command, though this should be used with caution. This command will remove files for good, and unlike your desktop system, after you remove a file in a UNIX like system, it is gone for good! This is another reason why you should use version control systems such as Git with remote back ups. If you accidentally delete all of your source files and you haven't backed them up using Git or something similar, they will be gone forever and you will have to start again from scratch!.
+After running these jobs, you may want to remove the current stash of output files. You can do this using the \hltexttt{rm} command, though this should be used with caution. This command will remove files for good, and unlike your desktop system, after you remove a file in a UNIX like system, it is gone for good! This is another reason why you should use version control systems such as Git with remote back ups. If you accidentally delete all of your source files and you haven't backed them up using Git or something similar, they will be gone forever and you will have to start again from scratch!.
 %
 %
 \par
 %
 %
-I stress the importance/danger associated with using the \texttt{rm} command to hopefully help you avoid disaster. In saying that, if used properly it is a simple and extremely useful command.
+I stress the importance/danger associated with using the \hltexttt{rm} command to hopefully help you avoid disaster. In saying that, if used properly it is a simple and extremely useful command.
 %
 %
 \par
-If you have named output files in the standard I have used throughout my examples (output scripts ending with \texttt{stdout.out} and \texttt{stderr.out}), then you can delete all of these files with the following commands,
+If you have named output files in the standard I have used throughout my examples (output scripts ending with \hltexttt{stdout.out} and \hltexttt{stderr.out}), then you can delete all of these files with the following commands,
 %
 \begin{lstlisting}[language=bash, frame=single]
   #delete any files that end with stdout.out
