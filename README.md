@@ -6,7 +6,7 @@ The complegte guide can be found in the PDF file listed above, and the associate
 
 ## Installing R Packages
 
-The [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) script will submit a job to call the  [./install_r_packages/install_r_packages.R] script, which will install the following packages:
+The [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) script will submit a job to call the  [install_r_packages.R](./install_r_packages/install_r_packages.R) script, which will install the following packages:
 ```
               'tidyverse',
               'lme4',
