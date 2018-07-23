@@ -33,9 +33,9 @@ To log into HPC, we will be using the Secure SHell (SSH) protocol, which we can 
 \end{lstlisting}
 where you will replace \hltexttt{<your\_qut\_id>} with your QUT username, ie.
 \begin{lstlisting}[language=bash, frame=single]
-  #if you applied for HPC access with staff acount
+  #if you applied for HPC access with staff account
   ssh jane.doe@lyra.qut.edu.au
-  #if you applied for HPC access with student acount
+  #if you applied for HPC access with student account
   ssh n12345678@lyra.qut.edu.au
 \end{lstlisting}
 %
@@ -85,7 +85,7 @@ It is also helpful to be able to transfer other files to and from HPC. The easie
 \hspace*{-2cm}
 \begin{lstlisting}[language=bash, breaklines=true, frame=single]
   #all of this in a single line/command
-  sshfs -o allow_other <your_qut_username>@lyra.qut.edu.au:/home/<your_qut_username> <path_to_mount_location_on_desktop>
+  sshfs <your_qut_username>@lyra.qut.edu.au:/home/<your_qut_username> <path_to_mount_location_on_desktop>
 \end{lstlisting}
 % 
 %
