@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.8)  23 JUL 2018 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.8)  23 JUL 2018 18:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1793,7 +1793,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--95
 
 (./_minted-main/01AF3D44D5EAB86E9802DFDDA91C96FBA8462FD1C214ED80FDED64CD2D0A492
 5.pygtex)
-Overfull \hbox (33.67526pt too wide) in paragraph at lines 113--115
+Overfull \hbox (33.67526pt too wide) in paragraph at lines 118--120
 \T1/lmr/m/n/10 drive on HPC to your laptop/desktop. After you in-stall the pro-
 gram, type in []\T1/lmtt/m/n/10 lyra.qut.edu.au
  []
@@ -1807,12 +1807,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--32
 
 
 (./_minted-main/1776D06CA4BA978090AD8B72182D84D5A8462FD1C214ED80FDED64CD2D0A492
-5.pygtex)
+5.pygtex) [9]
 Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
-[9]
 \openout3 = `main.pyg'.
 
 
@@ -1855,6 +1854,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
+[11]
 \openout3 = `main.pyg'.
 
 
@@ -1864,7 +1864,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
-[11]
 \openout3 = `main.pyg'.
 
 
@@ -1883,7 +1882,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
 
 (./_minted-main/0E74A835570AC5D54A301B72A3671B19A8462FD1C214ED80FDED64CD2D0A492
-5.pygtex)
+5.pygtex) [13]
 Underfull \hbox (badness 10000) in paragraph at lines 170--174
 
  []
@@ -1897,7 +1896,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
  []
 
-[13]
 \openout3 = `main.pyg'.
 
 
@@ -1933,12 +1931,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--41
 
  []
 
+[16]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/5C1D26A5A8F33330BB488FB94ED499DBA8462FD1C214ED80FDED64CD2D0A492
-5.pygtex) [16]
-Underfull \hbox (badness 10000) in paragraph at lines 55--59
+5.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 44--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--60
 
  []
 
@@ -1946,12 +1950,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--59
 
 
 (./_minted-main/3E81A44DABE7718244DC43199C58432BA8462FD1C214ED80FDED64CD2D0A492
-5.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+5.pygtex) [17]
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
-[17]
 \openout3 = `main.pyg'.
 
 
@@ -1994,10 +1997,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41317 strings out of 493029
- 821107 string characters out of 6136235
+ 41347 strings out of 493029
+ 821802 string characters out of 6136235
  1264572 words of memory out of 5000000
- 44020 multiletter control sequences out of 15000+600000
+ 44050 multiletter control sequences out of 15000+600000
  72582 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,97p,10489b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2014,7 +2017,7 @@ sr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/uc
 rro8a.pfb>
-Output written on main.pdf (22 pages, 381926 bytes).
+Output written on main.pdf (22 pages, 382798 bytes).
 PDF statistics:
  364 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams
