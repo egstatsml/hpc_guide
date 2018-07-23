@@ -6,13 +6,102 @@ Now we are set up on HPC and have installed some of the packaged we need, we wil
 \subsection{Multicore Processing - Let the OS do the Hard Work}
 %
 %
-Many times when we want to process a large data set, we want to do a single task to each element in the data set, and sometimes this individual operation can be computationally expensive. An example is preprocessing all images in a large data set to remove certain artefacts, convert to a more convenient format etc.. It would be beneficial to process many of these items in the many available CPU cores on HPC. One method is to write a multi-threaded/multi-process script (not a simple task in R) to process the data. Another and far easier way to handle this is to create a script that processes a single item in the data set, and submit this job many times to the HPC cluster with a different observation from the data set as an input example. An example of this is provided in <HERE>.
-
+Many times when we want to process a large data set, we want to do a single task to each element in the data set, and sometimes this individual operation can be computationally expensive. An example is preprocessing all images in a large data set to remove certain artefacts, convert to a more convenient format etc.. It would be beneficial to process many of these items in the many available CPU cores on HPC. One method is to write a multi-threaded/multi-process script (not a simple task in R) to process the data. Another and far easier way to handle this is to create a script that processes a single item in the data set, and submit this job many times to the HPC cluster with a different observation from the data set as an input example. The idea is to let the OS and the scheduler do the hard part of organising multicore processing.
+%
+%
+%
+\par
+%
+%
+Another scenario when this type of processing is helpful is for model validation. Consider a case where you are commencing work on a new project, with a new type of data set and you want to run some experiments to bench mark the performance of different models with different parameters. For example, say you are fitting a mixture model, and you want to investigate the performance of the model for different number of mixtures, or a boosted regression tree, where you want to see how the accuracy of your predictions change when altering the parameters of the model. This type of experimentation can greatly benefit from this type of parallel processing, where you want to run several independent experiments with varying parameters. An example of how to do this is supplied in the \hltexttt{bt\_examples} directory of the repo for this guide, where we will fit many different boosted regression tree models to try and predict the presence of breast cancer based on biopsy information \cite{breast}.
+%
+%
+%
+\par
+%
+%
+When looking at the contents of the \hltexttt{bt\_examples} directory, you will find a single R script \hltexttt{breast\_cancer\_bt.R} and ten batch scripts \hltexttt{batch\_bt\_XXXX.sh}. Each of these batch scripts will invoke the \hltexttt{breast\_cancer\_bt.R} script, though each script will supply a different command line argument to specify the number of trees we want to use in the model. We can sumbit batch jobs for all of these scripts using the following commands,
+\begin{lstlisting}[language=bash, frame=single]
+  #Change to the bt_examples directory
+  cd ~/hpc_guide/bt_examples/
+  #now lets send all the batch scripts to qsub
+  #so we can submit jobs for them
+  #
+  #We can use a for loop to submit all scripts
+  #that end in .sh
+  for sub in $( ls ./*.sh); do qsub $sub; done
+\end{lstlisting}
 % 
+% 
+After running this command, you will see that ten independent jobs have been submitted. You can track the progress of these jobs by again running the command,
+\begin{lstlisting}[language=bash, frame=single]
+  watch -n 1 qstat -u <your_QUT_username>
+\end{lstlisting}
+%
+%
+Once all of the jobs are completed, you will see a number of log files have been created, a standard output and a standard error file for each job submitted. You can view the output of these files using the cat command.
+%
+%
+\newpage
+\begin{lstlisting}[language=bash, frame=single]
+  #view the output of a single job
+  cat bt_10000_stdout.out
+  cat bt_10000_stderr.out
+  #if the output file is long, you can display it
+  #in a slightly nicer format where you can scroll through
+  #using enter or the space bar
+  cat bt_10000_stdout.out | more
+\end{lstlisting}
 %
 %
 %
-%%% Local Variables:
+After running these jobs, you may want to remove the current stash of output files. You can do this using the \hltexttt{rm} command, though this should be used with caution. This command will remove files for good, and unlike your desktop system, after you remove a file in a UNIX like system, it is gone for good! This is another reason why you should use version control systems such as Git with remote back ups. If you accidentally delete all of your source files and you haven't backed them up using Git or something similar, they will be gone forever and you will have to start again from scratch!.
+%
+%
+\par
+%
+%
+I stress the importance/danger associated with using the \hltexttt{rm} command to hopefully help you avoid disaster. In saying that, if used properly it is a simple and extremely useful command.
+%
+%
+\par
+If you have named output files in the standard I have used throughout my examples (output scripts ending with \hltexttt{stdout.out} and \hltexttt{stderr.out}), then you can delete all of these files with the following commands,
+%
+\begin{lstlisting}[language=bash, frame=single]
+  #delete any files that end with stdout.out
+  rm ./*stdout.out
+  #delete any files that end with stderr.out
+  rm ./*stderr.out
+\end{lstlisting}
+%
+%
+%
+%
+%
+\subsubsection{Tips for bulk Submitting Jobs}
+Bulk submitting jobs in this way relies on you designing your original code to handle command line arguments. Adopting this type of program design is extremely helpful during experimentation, and is a part of general good coding practices. Don't hard-code anything you think may even have the slightest possibility of ever changing. Command line arguments are a great way to develop software that is highly modular, and generally easy to use (as long as you document what you have done!).
+%
+%
+\par
+%
+%
+For bulk submitting jobs in this way, I would recommend using the bash scripts I have provided as a template, and simply modifying them to suit your needs. The components that you will need to modify include the PBS directives at the top that define your computational requirements. Another important component to change is the output location where the standard output and standard error files will be saved. If every script uses the same name for these output files, they will simply be overwritten whenever a new job is executed.
+%
+%
+\par
+Depending on the number of jobs you are planning to submit, it can also be helpful to write a small program that actually generated the qsub bash scripts for you. An easy way to do this is to start with a base file that has almost all the information you need, excluding the names of the output text files and the different input arguments you want to supply. Then you can write a small script that simply fills these areas with the information you require. If you want some examples on how I do this, just let me know and I can send you some examples.
+%
+%
+\par
+HPC will let you run roughly 100 different jobs simultaneously, though you are able to submit many many more jobs than that. A max of 10000 job submissions would be a reasonable limit, depending on the resources you require. If you do submit more than 100 jobs, excess jobs will simply join the cue and commence running after some of your other jobs have finished.
+%
+%
+%
+\subsection{Multicore Processing - The Hard Way}
+Whilst the previous section described how to efficiently and easily parallelise your work, the bulk submission method is only suitable when individual tasks can be run independently. For many cases, this type of parallelisation is not possible. For these scenarios, parallelisation may still be feasible, as a few packages support multicore processing. In general, this a much more involved and arduous task, and one that I don't believe R handles nicely when compared to other programming languages such as Python\footnote{Although it can also be a pain to implement multithreaded programs in Python!}. Given the increased complexity associated with implementing many multiprocessing programs directly whithin R, it will not be covered in this guide, as it is assummed that if you have the programming proficiency to implement such a system, you should have little dramas migrating it to the HPC environment.
+
+
+%%%Local Variables:
 %%% mode: latex
 %%% TeX-master: "main"
 %%% End:

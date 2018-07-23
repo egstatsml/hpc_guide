@@ -39,14 +39,27 @@
       \verb https://www.putty.org/
       \endverb
     \endentry
-    \entry{openSUSE}{online}{}
+    \entry{breast}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8101278d272fd8fd005327a55ff4ceea}{%
+           family={Wolber},
+           family_i={W\bibinitperiod},
+           given={William},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {UCI}%
+      }
+      \strng{namehash}{8101278d272fd8fd005327a55ff4ceea}
+      \strng{fullhash}{8101278d272fd8fd005327a55ff4ceea}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{openSUSE}
-      \field{year}{2018}
+      \field{title}{Breast Cancer Wisconsin Data Set}
+      \field{year}{1992}
       \verb{url}
-      \verb https://www.opensuse.org/
+      \verb https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)
       \endverb
     \endentry
   \endsortlist
