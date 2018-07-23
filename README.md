@@ -30,7 +30,7 @@ If you want to install more packages, simply add the name of the package to the 
 
 ## Examples
 
-Some example jobs are listed in the [./bt_examples](https://github.com/ethangoan/hpc_guide/tree/master/bt_examples) for a boosted regression tree problem to predict the presence of breast cancer based in biopsy measurements. Data is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)). In there are 10 seperate batch scripts for submitting jobs to the PBS queue. Each of these jobs will load in the required modules needed, and call the [./bt_examples/breast_cancer_bt.R] script with a different command line argument, indicating how many trees to use for each model. Please refer to the PDF guide for more info.
+Some example jobs are listed in the [./bt_examples](https://github.com/ethangoan/hpc_guide/tree/master/bt_examples) for a boosted regression tree problem to predict the presence of breast cancer based in biopsy measurements. Data is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)). In there are 10 seperate batch scripts for submitting jobs to the PBS queue. Each of these jobs will load in the required modules needed, and call the [breast_cancer_bt.R](./bt_examples/breast_cancer_bt.R) script with a different command line argument, indicating how many trees to use for each model. Please refer to the PDF guide for more info.
 
 
 Any questions, queries, suggestions, or if you me want to add to this guide, please just let me know.
