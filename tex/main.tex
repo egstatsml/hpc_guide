@@ -13,15 +13,9 @@
 \usepackage{fancyhdr}
 \usepackage{epstopdf}
 \usepackage{subcaption}
-\usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 \definecolor{Light}{gray}{.90}
-\lstset{basicstyle=\ttfamily\footnotesize,
-  showstringspaces=false,
-  commentstyle=\color{red},
-  keywordstyle=\color{blue},
-  backgroundcolor=\color{Light},
-}
+\usepackage{minted}
 %for adding notes
 \usepackage[many]{tcolorbox}
 \newtcolorbox{story}[1][]{
@@ -45,6 +39,7 @@
 \usepackage{pdflscape}
 \usepackage{ifthen}
 \usepackage{color}
+\usepackage{textcomp}
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows.meta,quotes,shadows,decorations.pathreplacing,positioning,fadings}
 \usepackage{cfr-lm} %imported for neural net drawing
@@ -85,6 +80,7 @@
 %
 % Section referencing
 \newcommand{\sref}[1]{\S\ref{#1}}
+
 \sethlcolor{Light}
 \newcommand{\hltexttt}[1]{\texttt{\hl{#1}}}
 % 
