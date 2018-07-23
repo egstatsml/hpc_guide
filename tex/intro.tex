@@ -88,11 +88,14 @@ You can clone your repo to HPC via the terminal that is connected to HPC by runn
 %
 \subsection{Mounting HPC Drive on Your Machine}
 \subsubsection{Mac and Linux}
-It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here}. After you install the required programs, you can mount the directory by creating a folder on your desktop where you want to mount your HPC files by running the following command,
+It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here}. After you install the required programs, you can mount the directory by creating a folder on your desktop where you want to mount your HPC files by running the following command into a terminal that is not logged on to HPC,
 %
 %
-\newpage
-\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize]{bash}
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  #run these commands on YOUR MACHINE
+  #ie in a new terminal that is not logged on to HPC
   #create a directory on your machine where we will mount the
   #HPC network drive
   mkdir ~/lyra #new folder will be in home directory

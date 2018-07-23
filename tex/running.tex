@@ -57,9 +57,8 @@ Now that you have transferred your code across over to HPC and have been allocat
 \end{minted}
 From the output of this, you may begin to appreciate why not all of the packages are loaded on startup, there is an awful lot of them. You can search through the output to find any modules you are interested in. Once you have found the module you are interested in, you can load it with the \hltexttt{module load} command. An example of common modules that might be helpful are listed here.
 %
-%
 \\
-\par
+%
 \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #load in R
   module load atg/R/3.4.1-foss-2016a
@@ -81,7 +80,8 @@ From the output of this, you may begin to appreciate why not all of the packages
   python/3.6.4-intel-2017a
 \end{minted}
 %
-%
+\\
+\par
 %
 For this guide, we will use R as an example, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \hltexttt{module load atg/R/3.4.1-foss-2016a}. Once loaded, you can start R by simply typing \hltexttt{R} into the terminal.
 %
@@ -121,7 +121,9 @@ If you try and run an R script now, you will likely find that it will throw an e
   Rscript install_r_packages.R
 \end{minted}
 %
-%
+\\
+\par
+% 
 This will take a while to run (a few hours I think), so you can either leave your terminal open and let the program run, or you can use the instructions in the next section, where we will learn to submit a batch job that will install all of the packages for you.
 %
 %

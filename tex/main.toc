@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Interactive Jobs}{9}{subsection.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Modules}{9}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Modules}{10}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Installing R Packages}{11}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
@@ -34,15 +34,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.4.1}Installing More Packages}{14}{subsubsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.2}Quick Note on Python}{14}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2}Quick Note on Python}{15}{subsubsection.2.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Examples}{15}{section.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Multicore Processing - Let the OS do the Hard Work}{15}{subsection.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}Tips for bulk Submitting Jobs}{17}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Tips for bulk Submitting Jobs}{18}{subsubsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{18}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{19}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Quick Guide}{20}{section.4}
 \defcounter {refsection}{0}\relax 
