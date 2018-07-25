@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.8)  25 JUL 2018 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.8)  25 JUL 2018 16:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1707,7 +1707,7 @@ Package epstopdf Info: Source file: <./figs/qut.eps>
 (epstopdf)             \includegraphics on input line 137.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/qut-eps-converted-to.pdf, id=135, 120.45pt x 122.4575pt>
+<./figs/qut-eps-converted-to.pdf, id=139, 120.45pt x 122.4575pt>
 File: ./figs/qut-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/qut-eps-converted-to.pdf>
@@ -1762,7 +1762,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--39
 5.pygtex
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 2.
-) <./figs/putty.png, id=199, 570.13pt x 560.0925pt>
+) <./figs/putty.png, id=204, 570.13pt x 560.0925pt>
 File: ./figs/putty.png Graphic file (type png)
 
 <use ./figs/putty.png>
@@ -1977,17 +1977,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--25
 
 
 (./_minted-main/415AA2352326504823C3D89ADA7262B3A8462FD1C214ED80FDED64CD2D0A492
-5.pygtex)) [21]
+5.pygtex)) [21] [22] (./change.tex
+Overfull \hbox (27.55238pt too wide) in paragraph at lines 5--14
+ []|  [] 
+ []
+
+)
 runsystem(rm "main.pyg")...executed.
 
- [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+ [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C5B13B5C9E03BF3CE80AB940D36D9420;1826.
+(rerunfilecheck)             Checksum: BE2AF5577ECBF0E2D6DB95DA1100D4DC;1872.
 
 
 LaTeX Warning: There were undefined references.
@@ -1997,10 +2002,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41342 strings out of 493029
- 821379 string characters out of 6136235
+ 41352 strings out of 493029
+ 821501 string characters out of 6136235
  1264572 words of memory out of 5000000
- 44046 multiletter control sequences out of 15000+600000
+ 44050 multiletter control sequences out of 15000+600000
  72582 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,97p,10489b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2017,10 +2022,10 @@ sr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/uc
 rro8a.pfb>
-Output written on main.pdf (22 pages, 382806 bytes).
+Output written on main.pdf (23 pages, 384081 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 304 compressed objects within 4 object streams
- 58 named destinations out of 1000 (max. 500000)
- 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 335 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -53,3 +53,5 @@
 \contentsline {subsection}{\numberline {5.2}Installed R Packages aren't loading}{21}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Installing More Packages}{21}{subsection.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Change Log}{23}{section.6}
