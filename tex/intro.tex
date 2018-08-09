@@ -87,6 +87,10 @@ You can clone your repo to HPC via the terminal that is connected to HPC by runn
 %
 %
 \subsection{Mounting HPC Drive on Your Machine}
+Directions for how to mount your HPC home drive onto your desktop machine can be found on the \href{https://wiki.qut.edu.au/pages/viewpage.action?pageId=244125273}{QUT HPC Wiki}. The QUT HPC Wiki can be a reasonable source for information, though many of the guides are incomplete, or hard to follow for a new user (hence the creation of this guide!), though the methods for mounting a drive are good. I will provide some alternative methods for mounting a drive here, so feel free to follow either one.
+%%
+%
+%
 \subsubsection{Mac and Linux}
 It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here}. After you install the required programs, you can mount the directory by creating a folder on your desktop where you want to mount your HPC files by running the following command into a terminal that is not logged on to HPC,
 %
@@ -120,6 +124,20 @@ For Windows machines, called \href{https://www.nsoftware.com/netdrive/sftp/}{SFT
 \par
 %
 An alternative program called \href{https://winscp.net/eng/download.php}{WinSCP} will do allow you transfer files to and from HPC. This is (slightly) less nice to use, but the option is there if you like.
+%
+%
+\subsection{Logging in When Not On QUT's Network}
+%
+%
+Up until now, you would have been required to be at QUT and directly connected to the network to log in to HPC. We can access HPC from off campus by using the \href{https://secure.qut.edu.au/ithelpdesk/qut/softwaredownloads/downloads.jsp}{Cisco Remote Access Client} to open a VPN connection to QUT's network. To open the VPN connection, install the remote client from \ref{https://secure.qut.edu.au/ithelpdesk/qut/softwaredownloads/downloads.jsp}{here}. For the VPN address, use \texttt{sas.qut.edu.au}, then use your QUT staff or student credentials to login. After you have opened the VPN connection, you can log in to HPC using the exact same instructions used previously. This means you can now access HPC from home, from the Botanic Gardens, overseas, or practically anywhere you have an internet connection!
+%
+%
+\par
+\begin{story}
+  \textbf{NOTE:}
+  \\
+  You won't be able to open a VPN connection on some networks, such as Eduroam.
+\end{story}
 
 %%% Local Variables:
 %%% mode: latex

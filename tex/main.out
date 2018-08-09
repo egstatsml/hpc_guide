@@ -8,20 +8,23 @@
 \BOOKMARK [2][-]{subsection.1.4}{Mounting HPC Drive on Your Machine}{section.1}% 8
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Mac and Linux}{subsection.1.4}% 9
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Windows}{subsection.1.4}% 10
-\BOOKMARK [1][-]{section.2}{Submitting Jobs}{}% 11
-\BOOKMARK [2][-]{subsection.2.1}{Interactive Jobs}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.2}{Modules}{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.3}{Installing R Packages}{section.2}% 14
-\BOOKMARK [2][-]{subsection.2.4}{Submitting Batch Jobs}{section.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Installing More Packages}{subsection.2.4}% 16
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Quick Note on Python}{subsection.2.4}% 17
-\BOOKMARK [1][-]{section.3}{Examples}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{Multicore Processing - Let the OS do the Hard Work}{section.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Tips for bulk Submitting Jobs}{subsection.3.1}% 20
-\BOOKMARK [2][-]{subsection.3.2}{Multicore Processing - The Hard Way}{section.3}% 21
-\BOOKMARK [1][-]{section.4}{Quick Guide}{}% 22
-\BOOKMARK [1][-]{section.5}{Other Tips}{}% 23
-\BOOKMARK [2][-]{subsection.5.1}{Some of the commands in this guide aren't working :\( }{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.2}{Installed R Packages aren't loading}{section.5}% 25
-\BOOKMARK [2][-]{subsection.5.3}{Installing More Packages}{section.5}% 26
-\BOOKMARK [1][-]{section.6}{Change Log}{}% 27
+\BOOKMARK [2][-]{subsection.1.5}{Logging in When Not On QUT's Network}{section.1}% 11
+\BOOKMARK [1][-]{section.2}{Submitting Jobs}{}% 12
+\BOOKMARK [2][-]{subsection.2.1}{Interactive Jobs}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.2}{Modules}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.3}{Installing R Packages}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.4}{Submitting Batch Jobs}{section.2}% 16
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Installing More Packages}{subsection.2.4}% 17
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Quick Note on Python}{subsection.2.4}% 18
+\BOOKMARK [1][-]{section.3}{Examples}{}% 19
+\BOOKMARK [2][-]{subsection.3.1}{Multicore Processing - Let the OS do the Hard Work}{section.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Tips for bulk Submitting Jobs}{subsection.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.2}{Multicore Processing - The Hard Way}{section.3}% 22
+\BOOKMARK [1][-]{section.4}{Quick Guide}{}% 23
+\BOOKMARK [1][-]{section.5}{Other Tips}{}% 24
+\BOOKMARK [2][-]{subsection.5.1}{Some of the commands in this guide aren't working :\( }{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.2}{Installed R Packages aren't loading}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.3}{Installing More Packages}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.4}{HPC is Being Painfully Slow :\(}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.5}{Error - /usr/bin/env: 'bash': No such file or directory}{section.5}% 29
+\BOOKMARK [1][-]{section.6}{Change Log}{}% 30
