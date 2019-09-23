@@ -13,15 +13,10 @@
 \usepackage{fancyhdr}
 \usepackage{epstopdf}
 \usepackage{subcaption}
-\usepackage{listings}
+\usepackage{wasysym} % for smiley faces
 \usepackage[dvipsnames]{xcolor}
 \definecolor{Light}{gray}{.90}
-\lstset{basicstyle=\ttfamily\footnotesize,
-  showstringspaces=false,
-  commentstyle=\color{red},
-  keywordstyle=\color{blue},
-  backgroundcolor=\color{Light},
-}
+\usepackage{minted}
 %for adding notes
 \usepackage[many]{tcolorbox}
 \newtcolorbox{story}[1][]{
@@ -45,6 +40,7 @@
 \usepackage{pdflscape}
 \usepackage{ifthen}
 \usepackage{color}
+\usepackage{textcomp}
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows.meta,quotes,shadows,decorations.pathreplacing,positioning,fadings}
 \usepackage{cfr-lm} %imported for neural net drawing
@@ -55,7 +51,7 @@
     colorlinks=true,
     linkcolor=blue,
     citecolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=blue,
   }
 \hypersetup{linktocpage} %so TOC only links the page numbers
@@ -72,7 +68,7 @@
 \newfloatcommand{capbtabbox}{table}[][\FBwidth]
 \usepackage{blindtext}
 \usepackage{array}
-% 
+%
 %MY NEW COMMANDS
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\N}{\mathcal{N}}
@@ -85,9 +81,10 @@
 %
 % Section referencing
 \newcommand{\sref}[1]{\S\ref{#1}}
+
 \sethlcolor{Light}
 \newcommand{\hltexttt}[1]{\texttt{\hl{#1}}}
-% 
+%
 %
 %Document specific settings
 \linespread{1.5}
@@ -106,7 +103,7 @@ isbn=false, doi=false, url=false]{biblatex}
   \clearlist{language}%
 }
 %
-% 
+%
 %
 \fancypagestyle{main}{
 \fancyhead{}
@@ -125,7 +122,7 @@ isbn=false, doi=false, url=false]{biblatex}
 \fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\thepage}{}}
 }
 %
-\begin{document} 
+\begin{document}
 %
 %Set the page style to main
 \pagestyle{main}
@@ -141,7 +138,7 @@ isbn=false, doi=false, url=false]{biblatex}
   \includegraphics[scale=0.5]{./figs/qut.eps}
 \end{figure}
 \begin{center}
-  Version 0.1 - Last Updated 20/07/2018
+  Version 0.12 - Last Updated 09/08/2018
 \end{center}
 \tableofcontents
 %
@@ -168,6 +165,10 @@ isbn=false, doi=false, url=false]{biblatex}
 \printbibliography
 %
 %
+\newpage
+%
+%
+%\input{change.tex}
 \end{document}
 
 %%% Local Variables:

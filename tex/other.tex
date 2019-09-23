@@ -1,0 +1,84 @@
+\section{Other Tips, Tricks and some Common Errors.}
+This section will be updated every now and then with anything new I find. If you find an interesting tip, trick or some package specific information that you think others might benefit from, let me know and we can add it.
+%
+%
+\subsection{ Some of the Commands in this guide aren't working \frownie}
+On some occasions, certain commands may not work when copying and pasting them as certain characters may not be formatted in ASCII format in this LaTeX document. I have tried my best to make sure all the commands work, but if you find one that doesn’t work, try typing it in manually instead of copying and pasting. If that doesn’t work, let me know and I will fix it up.
+%
+%
+\subsection{Installed R Packages aren't loading}
+%
+%
+If you have installed R packages using the script I have provided, packages will be installed into R/library directory. This needs to be done because installing pack- ages on HPC is slightly different to that of your desktop machine, as you don’t have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command,
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  echo 'R\_LIBS\_USER="~/R/library"' >  ~/.Renviron
+\end{minted}
+%
+%
+%
+\subsection{Installing More Packages}
+%
+%
+As mentioned in section \ref{sec:install} and above, the \hltexttt{install\_r\_packages.R} script install packages to the \hltexttt{R/library} directory. If you need to install more packages, the best bet would be to add the package you want to install to the vector of strings in the \hltexttt{install\_r\_packages.R} script and run it again.
+%
+%
+%
+%
+\subsection{HPC is being painfully slow \frownie}
+%
+%
+At times, the HPC infrastructure can appear to be frightfully slow, almost to the point of being unusable. Most of the time this is because people are using HPC incorrectly, by not requesting resources and submitting jobs correctly and simply running computationally expensive processes on the login node. If this is the case, you can usually just submit an interactive job, and then perform all your other work (such as submitting batch jobs or editing files) from within that interactive job.
+%
+%
+%
+%
+\subsection{Error - /usr/bin/env: 'bash': No such file or directory}
+%
+When submitting a batch job, it is possible that you may see this error. This is likely because the batch script you are trying to submit was created on a Windows machine. Windows can sometimes be unnecessarily painful, and this is one of those times. Windows decided to be non-POSIX compliant, meaning that at the end of each line in a text document, Windows requires a \hltexttt{\textbackslash n} character (which says go to a new line), and a \hltexttt{\textbackslash r}, which says go to the beginning of the line. POSIX complient operating systems only require the former, thus any batch script written in Windows will likely contain the unnecessary \hltexttt{\textbackslash r} character, and will throw an error. We can remove these characters from the batch script by using the command,
+%
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+ sed $’s/\r$//’ <NAME_OF_BASH_SCRIPT> > <NAME_OF_NEW_BASH_SCRIPT>
+\end{minted}
+%
+%
+%
+This will create a new batch script with the special characters removed. We can then submit this job to the queue by running,
+
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  qsub <NAME_OF_NEW_BASH_SCRIPT>
+\end{minted}
+%
+%
+%
+%
+\subsection{``Ethan, your way sucks and I have a much better way to achieve this''}
+%
+%
+It is almost certain that there is a better/easier way to do many of the things I have proposed here. The methods and guide are presented as what my believe to be the easiest way to use HPC whilst also allowing you to use it to it's full potential. If you think you have a better way to do anything in here, or have anything you think should be added, \textbf{please} let me know and I will be happy to include it.
+%
+%
+\subsection{``I have tried and tried, but nothing is working''}
+%
+%
+Part of the reason I made this guide is to minimise the amount of time you need to spend learning how to use HPC, so you focus your time on more important science! Don't spend too much time on something if you are getting stuck, please reach for help! Feel free to email either myself or the HPC staff for assistance. If it is a problem I don't know how to solve (which is very possible), I can reach out for assistance from a few people in my lab that are serious experts on HPC stuff.
+%
+%
+\subsection{Error loading modules: If \'module\' is not a typo you can use command-not-found to lookup the package that contains it, like this: cnf module}
+%
+%
+Sometimes (for some silly reason) the environment for providing access to HPCs modules is not available on initial log-in or after you submitted a job. If you get the error message \hltexttt{If 'module' is not a typo you can use command-not-found to lookup the package that contains it, like this:} after trying to run something with the \htexttt{module} command, please execute this line to fix it all,
+%
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  # to allow you to have access to the module environment
+  source /etc/profile.d/modules.sh
+\end{minted}
+%
+%
+%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

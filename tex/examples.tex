@@ -21,7 +21,9 @@ Another scenario when this type of processing is helpful is for model validation
 %
 %
 When looking at the contents of the \hltexttt{bt\_examples} directory, you will find a single R script \hltexttt{breast\_cancer\_bt.R} and ten batch scripts \hltexttt{batch\_bt\_XXXX.sh}. Each of these batch scripts will invoke the \hltexttt{breast\_cancer\_bt.R} script, though each script will supply a different command line argument to specify the number of trees we want to use in the model. We can sumbit batch jobs for all of these scripts using the following commands,
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #Change to the bt_examples directory
   cd ~/hpc_guide/bt_examples/
   #now lets send all the batch scripts to qsub
@@ -30,20 +32,33 @@ When looking at the contents of the \hltexttt{bt\_examples} directory, you will 
   #We can use a for loop to submit all scripts
   #that end in .sh
   for sub in $( ls ./*.sh); do qsub $sub; done
-\end{lstlisting}
+\end{minted}
 % 
+\\
 % 
 After running this command, you will see that ten independent jobs have been submitted. You can track the progress of these jobs by again running the command,
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   watch -n 1 qstat -u <your_QUT_username>
-\end{lstlisting}
+\end{minted}
+%
+\\
+% 
+\begin{story}
+  \textbf{NOTE:}
+  \\
+  This specific model validation is here only as an example. If you look at the \hltexttt{stdout.out} files for each different model using the instructions below, you will see that each model performs exactly the same. You can have a play with this with different types of models, such as mixture models. You could try fitting a number of different models, each with a different number of mixtures and see which model performs best.
+\end{story}
+
 %
 %
 Once all of the jobs are completed, you will see a number of log files have been created, a standard output and a standard error file for each job submitted. You can view the output of these files using the cat command.
 %
 %
-\newpage
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #view the output of a single job
   cat bt_10000_stdout.out
   cat bt_10000_stderr.out
@@ -51,10 +66,11 @@ Once all of the jobs are completed, you will see a number of log files have been
   #in a slightly nicer format where you can scroll through
   #using enter or the space bar
   cat bt_10000_stdout.out | more
-\end{lstlisting}
+\end{minted}
 %
-%
-%
+\\
+% 
+% 
 After running these jobs, you may want to remove the current stash of output files. You can do this using the \hltexttt{rm} command, though this should be used with caution. This command will remove files for good, and unlike your desktop system, after you remove a file in a UNIX like system, it is gone for good! This is another reason why you should use version control systems such as Git with remote back ups. If you accidentally delete all of your source files and you haven't backed them up using Git or something similar, they will be gone forever and you will have to start again from scratch!.
 %
 %
@@ -67,12 +83,14 @@ I stress the importance/danger associated with using the \hltexttt{rm} command t
 \par
 If you have named output files in the standard I have used throughout my examples (output scripts ending with \hltexttt{stdout.out} and \hltexttt{stderr.out}), then you can delete all of these files with the following commands,
 %
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #delete any files that end with stdout.out
   rm ./*stdout.out
   #delete any files that end with stderr.out
   rm ./*stderr.out
-\end{lstlisting}
+\end{minted}
 %
 %
 %

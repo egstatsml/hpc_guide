@@ -1,5 +1,3 @@
-#!/usr/bin/env R
-
 ## A very simple script that will locally install many of the common
 ## packages used. If a package you use is not included, just add it
 ## to the list and run this script again

@@ -1,4 +1,5 @@
 \section{Submitting Jobs}
+\label{ref:submitting}
 % 
 % 
 %
@@ -25,8 +26,11 @@ We will first start with interactive jobs, and then show how we can move our wor
 %
 \subsection{Interactive Jobs}
 To submit a job to HPC, we use the \hltexttt{qsub} command, along with a few arguments to tell the scheduler what resources we require, and how long we need them for. To submit an interactive job, run the following command,
-\newpage
-\begin{lstlisting}[language=bash, frame=single, breaklines=true]
+%
+%
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #submit an interactive job to HPC
   #replace the HH:MM:SS with the amount of time you
   #expect your job to run
@@ -35,23 +39,27 @@ To submit a job to HPC, we use the \hltexttt{qsub} command, along with a few arg
   #Replace ZZZ with the name of your job
   #you can call it whatever you like :)
   qsub -I -S /bin/bash -l walltime=HH:MM:SS,mem=XXXg,ncpus=YYY -N ZZZ
-\end{lstlisting}
+\end{minted}
 %
-%
-Change the variables supplied here with the time and resources required for your work. After running this command, you will have to wait for your requested resources to be allocated to you. The time taken for your job to be accepted will depend on the amount of resources you requested. If you asked for 8 GB of RAM, 2 CPUs for only a couple hours, your job should be accepted within a minute or so. If you request 100 GB, 20 CPUs for 12 days, expect to wait a very long time for your interactive job to be accepted\footnote{You can request these resources, but will need to submit a batch job.}
+\\
+% 
+Change the variables supplied here with the time and resources required for your work. After running this command, you will have to wait for your requested resources to be allocated to you. The time taken for your job to be accepted will depend on the amount of resources you requested. If you asked for 8 GB of RAM, 2 CPUs for only a couple hours, your job should be accepted within a minute or so. If you request 100 GB, 20 CPUs for 12 days, expect to wait a very long time for your interactive job to be accepted.\footnote{You can request these resources, but will need to submit a batch job. See section \ref{sec:batch} for instructions on how to submit these.}
 
 \subsection{Modules}
 Now that you have transferred your code across over to HPC and have been allocated resources for a job, you can start loading and installing the required packages you need. HPC has many programs already installed, though they aren't initially loaded when you log in. These pre-installed programs are stored as \textit{modules} that need to be first loaded before you can use them. To see the modules currently installed on HPC, run the command,
 %
 %
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #see what modules are available
   module avail
-\end{lstlisting}
+\end{minted}
 From the output of this, you may begin to appreciate why not all of the packages are loaded on startup, there is an awful lot of them. You can search through the output to find any modules you are interested in. Once you have found the module you are interested in, you can load it with the \hltexttt{module load} command. An example of common modules that might be helpful are listed here.
 %
+\\
 %
-\begin{lstlisting}[language=bash, frame=single]
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #load in R
   module load atg/R/3.4.1-foss-2016a
 
@@ -70,18 +78,39 @@ From the output of this, you may begin to appreciate why not all of the packages
   module load python/2.7.13-foss-2017a-foss
   module load python/3.5.1-foss-2016a
   python/3.6.4-intel-2017a
-\end{lstlisting}
+\end{minted}
 %
-%
+\\
+\par
 %
 For this guide, we will use R as an example, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \hltexttt{module load atg/R/3.4.1-foss-2016a}. Once loaded, you can start R by simply typing \hltexttt{R} into the terminal.
 %
 %
 %
+\par
+You can list all modules that you have loaded in using the following command,
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  #list all modules we have loaded in to our current environment
+  module list
+\end{minted}
+
+If you have found that you have loaded in an incorrect module, or you have loaded in multiple modules for the same program (ie loading in multiple versions of R/MATLAB etc.) you can start from a clean slate by purging all loaded modules by running the command,
+%
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  #unload all modules you have loaded in
+  module purge
+\end{minted}
+% 
 \subsection{Installing R Packages}
 \label{sec:install}
 If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \hltexttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #change to home directory
   cd ~
   
@@ -90,29 +119,34 @@ If you try and run an R script now, you will likely find that it will throw an e
   cd hpc_guide
   #now run the install script
   Rscript install_r_packages.R
-\end{lstlisting}
+\end{minted}
 %
-%
+\\
+\par
+% 
 This will take a while to run (a few hours I think), so you can either leave your terminal open and let the program run, or you can use the instructions in the next section, where we will learn to submit a batch job that will install all of the packages for you.
-%
 %
 \begin{story}
   \textbf{NOTE:}
   \\
-  If you ran the above interactive script to install all the packages, once it is done there is one more command you will need to run. In this script, packages will be installed into \texttt{$\sim$R/library} directory. This needs to be done because installing packages on HPC is slightly different to that of your desktop machine, as you don't have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command
+  If you ran the above interactive script to install all the packages, once it is done there is one more command you will need to run. In this script, packages will be installed into \texttt{\textasciitilde R/library} directory. This needs to be done because installing packages on HPC is slightly different to that of your desktop machine, as you don't have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command
   \\
-   \hspace*{1cm}\texttt{   echo'R\_LIBS\_USER="$\sim$/R/library"' >  ~/.Renviron}
-  \\
+  \begin{minted}[fontsize=\footnotesize, fontfamily=courier]{bash}
+    echo 'R\_LIBS\_USER="~/R/library"' >  ~/.Renviron
+  \end{minted}
   in the terminal. If you install all the packages using the batch script example in the next section, you won't need to run this command, it will do it for you.
 \end{story}
 \subsection{Submitting Batch Jobs}
+\label{sec:batch}
 In the previous example, we saw how to submit an interactive job, load in R modules and install some base packages in an interactive session. We can achieve this same result by submitting a batch job, which will run on HPC without us having to intervene and leave the terminal open. Batch jobs are useful for programs that require a long time to run, since we can simply submit them and then forget about them (while they running at least).
 %
 \par
 % 
 %
 Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \hltexttt{batch\_jobs/install\_packages\_batch.sh} is supplied. This is a Bash script that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives.
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #!/usr/bin/env bash
 
   #PBS -N install_packages
@@ -120,10 +154,11 @@ Like submitting an interactive job, we need to specify the time and computationa
   #PBS -l mem=2GB
   #PBS -l walltime=20:00:00
   #PBS -o install_packages_stdout.out
-  #PBS -e install_packagesstderr.out
+  #PBS -e install_packages_stderr.out
 
-\end{lstlisting}
+\end{minted}
 %
+\\
 %
 The main differences here is the first line which is called the Shebang. This MUST be there in any batch configuration script, you will never need to change it. The other differences is the last two lines, which specifies where standard output and error messages will be written to.
 %
@@ -134,8 +169,9 @@ The main differences here is the first line which is called the Shebang. This MU
 Further down in the script you will see helper functions that will load all of the modules we need (for this example we only need the R module) and a function which invokes the R script to install the packages we need. These helper functions are called at the end of the script when the job has been submitted and accepted by the scheduler. We can submit this job using the following command,
 %
 %
-\newpage
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #clone the guide repo into your home directory
   #if you haven't already
   cd ~
@@ -146,23 +182,29 @@ Further down in the script you will see helper functions that will load all of t
   cd ./batch_jobs
   #submit the batch job with qsub
   qsub install_packages_batch.sh
-\end{lstlisting}
-%
+\end{minted}
+\\
 %
 Once you have submitted the job, you can track all of your submitted jobs using the command,
 %
-\begin{lstlisting}[language=bash, frame=single]
-  watch -n 1 qstat <your_QUT_username>
-\end{lstlisting}
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  watch -n 1 qstat -u <your_QUT_username>
+\end{minted}
 %
-%
+\\
+\\
+% 
 This will give you information on all the jobs you have submitted. You will be able to see whether they have commenced running, or if they are still running and how long they have been running for. Once the program has finished running, you can view the output of the installation script with the \hltexttt{cat} command.
-\begin{lstlisting}[language=bash, frame=single]
+\\
+\par
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #check the output of the program
   cat install_packages_stdout.out
   #check the error log to see if anything went wrong
   cat install_packages_stderr.out
-\end{lstlisting}
+\end{minted}
 %
 %
 %

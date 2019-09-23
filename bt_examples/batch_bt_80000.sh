@@ -78,7 +78,7 @@ run_program(){
     #where this bash job script is
     cd $PBS_O_WORKDIR
     #now run the R script
-    ./breast_cancer_bt.R --ntrees 80000   
+    Rscript  breast_cancer_bt.R --ntrees 80000   
 }
 
 
