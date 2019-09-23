@@ -108,12 +108,13 @@ You can clone your repo to HPC via the terminal that is connected to HPC by runn
 %
 %
 \subsection{Mounting HPC Drive on Your Machine}
+\label{sec:mounting_win}
 Directions for how to mount your HPC home drive onto your desktop machine can be found on the \href{https://wiki.qut.edu.au/pages/viewpage.action?pageId=244125273}{QUT HPC Wiki}. The QUT HPC Wiki can be a reasonable source for information, though many of the guides are incomplete, or hard to follow for a new user (hence the creation of this guide!), though the methods for mounting a drive are good. I will provide some alternative methods for mounting a drive here, so feel free to follow either one.
 %%
 %
 %
 \subsubsection{Mac and Linux}
-It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here}. After you install the required programs, you can mount the directory by creating a folder on your desktop where you want to mount your HPC files by running the following command into a terminal that is not logged on to HPC,
+It is also helpful to be able to transfer other files to and from HPC. The easiest way to do this is to mount a network directory, so you can copy and paste files to and from HPC just like you would on your desktop/laptop. Instructions on how to do this for Windows, Mac and Linux using SSHFS is provided \href{https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh}{here} (Note for Mac you will need to install Fuse for MacOS and SSHFS). After you install the required programs, you can mount the directory by creating a folder on your desktop where you want to mount your HPC files by running the following command into a terminal that is not logged on to HPC,
 %
 %
 \\
@@ -140,6 +141,12 @@ It is also helpful to be able to transfer other files to and from HPC. The easie
 %
 %
 \subsubsection{Windows}
+This is an alternate method for mounting remote Linux drives on Windows. The first method I would try is described at the top of Section \ref{sec:mounting_win}. This is just here to provide an alternative.
+%
+%
+\par
+%
+%
 For Windows machines, called \href{https://www.nsoftware.com/netdrive/sftp/}{SFTP Net Drive} will allow you to mount your home drive on HPC to your laptop/desktop. After you install the program, type in \hltexttt{lyra.qut.edu.au} as the server, and enter your QUT username and password. This will mount your HPC home drive to your machine in a new drive that can be found in My Computer on your machine.
 %
 \par
