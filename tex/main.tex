@@ -13,6 +13,7 @@
 \usepackage{fancyhdr}
 \usepackage{epstopdf}
 \usepackage{subcaption}
+\usepackage{wasysym} % for smiley faces
 \usepackage[dvipsnames]{xcolor}
 \definecolor{Light}{gray}{.90}
 \usepackage{minted}
@@ -50,7 +51,7 @@
     colorlinks=true,
     linkcolor=blue,
     citecolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=blue,
   }
 \hypersetup{linktocpage} %so TOC only links the page numbers
@@ -67,7 +68,7 @@
 \newfloatcommand{capbtabbox}{table}[][\FBwidth]
 \usepackage{blindtext}
 \usepackage{array}
-% 
+%
 %MY NEW COMMANDS
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\N}{\mathcal{N}}
@@ -83,7 +84,7 @@
 
 \sethlcolor{Light}
 \newcommand{\hltexttt}[1]{\texttt{\hl{#1}}}
-% 
+%
 %
 %Document specific settings
 \linespread{1.5}
@@ -102,7 +103,7 @@ isbn=false, doi=false, url=false]{biblatex}
   \clearlist{language}%
 }
 %
-% 
+%
 %
 \fancypagestyle{main}{
 \fancyhead{}
@@ -121,7 +122,7 @@ isbn=false, doi=false, url=false]{biblatex}
 \fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\thepage}{}}
 }
 %
-\begin{document} 
+\begin{document}
 %
 %Set the page style to main
 \pagestyle{main}
@@ -167,7 +168,7 @@ isbn=false, doi=false, url=false]{biblatex}
 \newpage
 %
 %
-\input{change.tex}
+%\input{change.tex}
 \end{document}
 
 %%% Local Variables:
