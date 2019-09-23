@@ -22,7 +22,6 @@ The [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) 
               'mlbench',
               'optparse',
               'gbm'
-
 ```
 
 If you want to install more packages, simply add the name of the package to the vector of package names in this install script, and submit the batch script  [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) again.

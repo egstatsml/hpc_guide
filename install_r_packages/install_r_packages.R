@@ -33,5 +33,16 @@ packages <- c('tidyverse',
               'magrittr',
               'mlbench',
               'optparse',
-              'gbm')
+              'gbm',
+              'XML',
+              'RCurl',
+              'rlist',
+              'ggplot2',
+              'brms',
+              'rstan')
 ipak(packages)
+
+#install packages with devtools from Github
+devtools::install_github("rstudio/reticulate")
+devtools::install_github("rstudio/tensorflow")
+devtools::install_github("rstudio/keras")
