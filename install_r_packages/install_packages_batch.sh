@@ -48,11 +48,11 @@ load_modules(){
     #activate module environment
     #NOTE: a recent HPC update means that you shouldn't need
     #to do this anymore, but I have included as a sanity check
-    source /etc/profile.d/modules.sh 
+    source /etc/profile.d/modules.sh
 
     #load R
     module load atg/R/3.4.1-foss-2016a
-}    
+}
 
 
 copy_in(){
@@ -77,14 +77,13 @@ run_program(){
     #make sure we change to the current directory
     #where this bash job script is
     cd $PBS_O_WORKDIR
-    ../install_r_packages.R
+    Rscript install_r_packages.R
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.
     #This just means we need to let R now where we installed
     #the new packages. This next command will save the variable
     #in an R envirionment file to tell us where it is stored
     echo 'R_LIBS_USER="~/R/library"' >  ~/.Renviron
-    
 }
 
 
