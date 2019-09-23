@@ -1,4 +1,4 @@
-\section{Other Tips}
+\section{Other Tips, Tricks and some Common Errors.}
 This section will be updated every now and then with anything new I find. If you find an interesting tip, trick or some package specific information that you think others might benefit from, let me know and we can add it.
 %
 %
@@ -64,6 +64,17 @@ It is almost certain that there is a better/easier way to do many of the things 
 %
 Part of the reason I made this guide is to minimise the amount of time you need to spend learning how to use HPC, so you focus your time on more important science! Don't spend too much time on something if you are getting stuck, please reach for help! Feel free to email either myself or the HPC staff for assistance. If it is a problem I don't know how to solve (which is very possible), I can reach out for assistance from a few people in my lab that are serious experts on HPC stuff.
 %
+%
+\subsection{Error loading modules: If \'module\' is not a typo you can use command-not-found to lookup the package that contains it, like this: cnf module}
+%
+%
+Sometimes (for some silly reason) the environment for providing access to HPCs modules is not available on initial log-in or after you submitted a job. If you get the error message \hltexttt{If 'module' is not a typo you can use command-not-found to lookup the package that contains it, like this:} after trying to run something with the \htexttt{module} command, please execute this line to fix it all,
+%
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  # to allow you to have access to the module environment
+  source /etc/profile.d/modules.sh
+\end{minted}
 %
 %
 %
