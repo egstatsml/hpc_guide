@@ -71,7 +71,28 @@ Now that you have access to HPC, you will want to transfer some code over so you
 \par
 %
 %
-To get your code onto HPC, I would recommend using Git and cloning your repo onto HPC. If you are unsure on how to use Git, I would strongly recommend you take some time to learn some basics and start using it for your software projects. Knowledge of Git is not required for this guide, but it will make your software development life significantly better, and allow you to distribute your research much easier.
+To get your code onto HPC, I would recommend using Git and cloning your repo onto HPC. If you are unsure on how to use Git, I would strongly recommend you take some time to learn some basics and start using it for your software projects. Knowledge of Git is not required for this guide, but it will make your software development life significantly better, and allow you to distribute your research much easier. There are some great tutorials out there to get you started with git; I recommend the \href{https://rogerdudler.github.io/git-guide/}{git - the simple guide}. Supplies information only on the essential components. One further recommendation for newcomers to Git I would make is to avoid using branches. When I first started using Git branches did nothing but confuse me and get me stuck. Once you get the hang of the basics, using branches can become extremely helpful (and essentially a requirement for bigger projects as part of a team), but for now, would suggest sticking with the default master branch.
+%
+%
+\begin{story}
+  \textbf{NOTE:}
+  \\
+  There are really only four commands you need to know to get started with Git.
+  \begin{itemize}
+  \item \hltexttt{git add}
+  \item \hltexttt{git commit}
+  \item \hltexttt{git push}
+  \item \textbf{Ask the interwebs}
+  \end{itemize}
+  Searching online is the most important Git command I can recommend. If you are stuck or find something new,
+  know that Google will almost definitely have the answer (I actually recommend using the \href{https://duckduckgo.com/}{DuckDuckGo} search engine when looking for programming advise. It generates nice summaries from StackOverflow and will put them at the top of the search results).
+  %
+  %
+  \par
+  %
+  %
+  If you are in doubt though, remember you can always start from a clean slate by moving your repositories directory to a new location, and then just cloning again.
+\end{story}
 %
 %
 \par
@@ -107,7 +128,7 @@ It is also helpful to be able to transfer other files to and from HPC. The easie
   #all of this in a single line/command
   sshfs <your_qut_username>@lyra.qut.edu.au:/home/<your_qut_username> ~/lyra
 \end{minted}
-% 
+%
 %
 %
 \par
@@ -116,7 +137,7 @@ It is also helpful to be able to transfer other files to and from HPC. The easie
   \\
   The rest of the commands shown throughout this guide should be run in a terminal that is logged in to HPC
 \end{story}
-% 
+%
 %
 \subsubsection{Windows}
 For Windows machines, called \href{https://www.nsoftware.com/netdrive/sftp/}{SFTP Net Drive} will allow you to mount your home drive on HPC to your laptop/desktop. After you install the program, type in \hltexttt{lyra.qut.edu.au} as the server, and enter your QUT username and password. This will mount your HPC home drive to your machine in a new drive that can be found in My Computer on your machine.
