@@ -11,8 +11,8 @@ On some occasions, certain commands may not work when copying and pasting them a
 %
 If you have installed R packages using the script I have provided, packages will be installed into R/library directory. This needs to be done because installing pack- ages on HPC is slightly different to that of your desktop machine, as you don’t have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command,
 %
-\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
-  echo 'R\_LIBS\_USER="~/R/library"' >  ~/.Renviron
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier, escapeinside=||]{bash}
+  echo 'R_LIBS_USER="~/R/library"' > |~/.Renviron|
 \end{minted}
 %
 %

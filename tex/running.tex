@@ -134,8 +134,8 @@ This will take a while to run (a few hours I think), so you can either leave you
   \\
   If you ran the above interactive script to install all the packages, once it is done there is one more command you will need to run. In this script, packages will be installed into \texttt{\textasciitilde R/library} directory. This needs to be done because installing packages on HPC is slightly different to that of your desktop machine, as you don't have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command
   \\
-  \begin{minted}[fontsize=\footnotesize, fontfamily=courier]{bash}
-    echo 'R\_LIBS\_USER="~/R/library"' >  ~/.Renviron
+  \begin{minted}[fontsize=\footnotesize, fontfamily=courier,escapeinside=||]{bash}
+  echo 'R_LIBS_USER="~/R/library"' > |~/.Renviron|
   \end{minted}
   in the terminal. If you install all the packages using the batch script example in the next section, you won't need to run this command, it will do it for you.
 \end{story}
@@ -144,7 +144,7 @@ This will take a while to run (a few hours I think), so you can either leave you
 In the previous example, we saw how to submit an interactive job, load in R modules and install some base packages in an interactive session. We can achieve this same result by submitting a batch job, which will run on HPC without us having to intervene and leave the terminal open. Batch jobs are useful for programs that require a long time to run, since we can simply submit them and then forget about them (while they running at least).
 %
 \par
-% 
+%
 %
 Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \hltexttt{batch\_jobs/install\_packages\_batch.sh} is supplied. This is a Bash script that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives.
 \\
@@ -198,7 +198,7 @@ Once you have submitted the job, you can track all of your submitted jobs using 
 %
 \\
 \\
-% 
+%
 This will give you information on all the jobs you have submitted. You will be able to see whether they have commenced running, or if they are still running and how long they have been running for. Once the program has finished running, you can view the output of the installation script with the \hltexttt{cat} command.
 \\
 \par
