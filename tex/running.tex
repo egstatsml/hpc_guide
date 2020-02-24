@@ -1,7 +1,7 @@
 \section{Submitting Jobs}
 \label{ref:submitting}
-% 
-% 
+%
+%
 %
 Whilst it may seem like ample resources are available, they are finite and accessed by many people, thus access to these services needs to be managed. Access to computing resources is scheduled by the Portable Batch System (PBS). Before you run any software, you must tell the PBS manager what resources you require and how long you will need them for. This is done by submitting jobs.
 %
@@ -42,7 +42,7 @@ To submit a job to HPC, we use the \hltexttt{qsub} command, along with a few arg
 \end{minted}
 %
 \\
-% 
+%
 Change the variables supplied here with the time and resources required for your work. After running this command, you will have to wait for your requested resources to be allocated to you. The time taken for your job to be accepted will depend on the amount of resources you requested. If you asked for 8 GB of RAM, 2 CPUs for only a couple hours, your job should be accepted within a minute or so. If you request 100 GB, 20 CPUs for 12 days, expect to wait a very long time for your interactive job to be accepted.\footnote{You can request these resources, but will need to submit a batch job. See section \ref{sec:batch} for instructions on how to submit these.}
 
 \subsection{Modules}
@@ -66,8 +66,8 @@ From the output of this, you may begin to appreciate why not all of the packages
   #load MATLAB
   #many different versions available
   #only need to load one you need
-  module load matlab/2016a 
-  module load matlab/2016b 
+  module load matlab/2016a
+  module load matlab/2016b
   module load matlab/2017b
 
   #load mathematica
@@ -104,26 +104,29 @@ If you have found that you have loaded in an incorrect module, or you have loade
   #unload all modules you have loaded in
   module purge
 \end{minted}
-% 
+%
 \subsection{Installing R Packages}
 \label{sec:install}
 If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \hltexttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
 \\
 \par
 \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
-  #change to home directory
+  # make sure you have submitted a job to run this command!
+  # the instructions above will help you submit an interactive job
+
+  # change to home directory
   cd ~
-  
-  git clone https://github.com/ethangoan/hpc_guide  
-  #change directory to the repo
+  # pull the repo for this guide
+  git clone https://github.com/ethangoan/hpc_guide
+  # change directory to the repo
   cd hpc_guide
-  #now run the install script
+  # now run the install script
   Rscript install_r_packages.R
 \end{minted}
 %
 \\
 \par
-% 
+%
 This will take a while to run (a few hours I think), so you can either leave your terminal open and let the program run, or you can use the instructions in the next section, where we will learn to submit a batch job that will install all of the packages for you.
 %
 \begin{story}
