@@ -4,6 +4,11 @@ This repo provides a quick reference guide on how to access and use the HPC faci
 
 The complegte guide can be found in the PDF file listed above, and the associated TeX files in the [./tex](https://github.com/ethangoan/hpc_guide/tree/master/tex) directory. They are there if you want to add your own notes or edit anything. If you want to have access to this repo to make changes or add some examples, please let me know. This will be a living document that I will update periodically as I am always finding out new tips and tricks.
 
+If you want to compile this document yourself, you will need to enable the `--shell-escape` flag to allow the package to properly format the code snippets.
+```bash
+pdflatex --shell-escape main.tex
+```
+
 ## Installing R Packages
 
 The [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) script will submit a job to call the  [install_r_packages.R](./install_r_packages/install_r_packages.R) script, which will install the following packages:
