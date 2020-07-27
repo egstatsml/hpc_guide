@@ -28,5 +28,9 @@
 
 - `module load <modulename>`
 
+- `module avail <modulename>`
+  - Search for available modules (e.g. a particular R version)
+
+
 
 
