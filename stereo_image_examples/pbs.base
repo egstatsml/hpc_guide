@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+
+#PBS -N bnn
+#PBS -l ncpus=<NCPUS>
+#PBS -l mem=<MEMORY>
+#PBS -l walltime=<WALLTIME>
+#PBS -o stdout_<INDEX>.out
+#PBS -e stderr_<INDEX>.out
+
+# More info on PBS directives can be found here
+# http://qcd.phys.cmu.edu/QCDcluster/pbs/run_serial.html
+#
+# My base script for the TBNN project
+# Few key arguments that can be replaced using `sed`
+#
+# These are specified as with all capitals, and are:
+#  <OUTDIR>
+#  <CONFIGFILE>
+#  <DATASET>
+#  <DATASPLIT>
+#  <PLOTOUTPUT>
+#  <WALLTIME>
+#  <MEMORY>
+#  <NCPUS>
+#  <NGPUS>
+#
+#
+# Any of the path variables should be absolute paths
+# to make sure everything goes a bit nicer
+
+
+###############################################
+#
+#
+#  Display PBS info
+#
+#
+###############################################
+print_pbs_info(){
+    echo ------------------------------------------------------
+    echo -n 'Job is running on node '; cat $PBS_NODEFILE
+    echo ------------------------------------------------------
+    echo PBS: qsub is running on $PBS_O_HOST
+    echo PBS: originating queue is $PBS_O_QUEUE
+    echo PBS: executing queue is $PBS_QUEUE
+    echo PBS: working directory is $PBS_O_WORKDIR
+    echo PBS: execution mode is $PBS_ENVIRONMENT
+    echo PBS: job identifier is $PBS_JOBID
+    echo PBS: job name is $PBS_JOBNAME
+    echo PBS: node file is $PBS_NODEFILE
+    echo PBS: current home directory is $PBS_O_HOME
+    echo PBS: PATH = $PBS_O_PATH
+    echo ------------------------------------------------------
+
+    # displaying some additional node info
+    # is handy for debugging some things or know if you are
+    # encountering any problematic nodes
+    echo ""
+    echo ------------------------------------------------------
+    pbsnodeinfo | head -n 2
+    pbsnodeinfo | grep $HOSTNAME
+}
+
+###############################################
+#
+#
+#  Helper/Setup Functions
+#
+#
+###############################################
+
+
+load_modules(){
+    #activate module environment
+    source /etc/profile.d/modules.sh
+    #load in the modules that we need
+    module load python/3.7.4-gcccore-8.3.0
+    # activate the virtual environment we need
+    source ~/p_3.7.4/bin/activate
+}
+
+
+copy_in(){
+    #nothing to copy in on this script
+    :
+}
+
+
+copy_out(){
+    #nothing to copy out on this script
+    :
+}
+
+
+
+run_program(){
+    cd $PBS_O_WORKDIR
+    python --version
+    which python
+    python create_depth_map.py <IMAGELIST> --max_disparity 16 --sigma 1 --lmbda 80000 --block_size 5
+}
+
+
+run_clean(){
+    #nothing to clean for this script
+    :
+}
+
+###############################################
+#
+#
+#  Running everything
+#
+#
+###############################################
+
+
+print_pbs_info
+load_modules
+copy_in
+copy_out
+run_program
+run_clean
