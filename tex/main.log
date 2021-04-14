@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.12)  14 APR 2021 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.12)  14 APR 2021 11:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1668,11 +1668,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 o.pdf>]
 [2])
 \tf@toc=\write11
- [3] (./preface.tex) [4] [5] (./intro.tex
+ [3] (./preface.tex
+
+LaTeX Font Warning: Font shape `U/wasy/bx/n' in size <10> not available
+(Font)              Font shape `U/wasy/b/n' tried instead on input line 4.
+
+[4]) [5] (./intro.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
 .
-
-(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
@@ -1708,7 +1712,7 @@ B.pygtex
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 2.
 )
-<./figs/putty.png, id=272, 570.13pt x 560.0925pt>
+<./figs/putty.png, id=273, 570.13pt x 560.0925pt>
 File: ./figs/putty.png Graphic file (type png)
 <use ./figs/putty.png>
 Package pdftex.def Info: ./figs/putty.png  used on input line 56.
@@ -1888,17 +1892,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
 (./_minted-main/8307307037D7113ACF9CDA7A7F2CACD05093E84BEA004B2911D4DA186861F6D
 B.pygtex) [26]
-<./figs/left.jpg, id=390, 1284.8pt x 722.7pt>
+<./figs/left.jpg, id=391, 1284.8pt x 722.7pt>
 File: ./figs/left.jpg Graphic file (type jpg)
 <use ./figs/left.jpg>
 Package pdftex.def Info: ./figs/left.jpg  used on input line 110.
 (pdftex.def)             Requested size: 186.72122pt x 105.0259pt.
-<./figs/right.jpg, id=391, 1284.8pt x 722.7pt>
+<./figs/right.jpg, id=392, 1284.8pt x 722.7pt>
 File: ./figs/right.jpg Graphic file (type jpg)
 <use ./figs/right.jpg>
 Package pdftex.def Info: ./figs/right.jpg  used on input line 111.
 (pdftex.def)             Requested size: 186.72122pt x 105.0259pt.
-<./figs/disp.jpg, id=392, 1927.2pt x 1084.05pt>
+<./figs/disp.jpg, id=393, 1927.2pt x 1084.05pt>
 File: ./figs/disp.jpg Graphic file (type jpg)
 <use ./figs/disp.jpg>
 Package pdftex.def Info: ./figs/disp.jpg  used on input line 113.
@@ -1950,11 +1954,11 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 38587 strings out of 479383
- 773777 string characters out of 5875830
+ 38589 strings out of 479383
+ 773804 string characters out of 5875830
  1658354 words of memory out of 5000000
- 54723 multiletter control sequences out of 15000+600000
- 477881 words of font info for 115 fonts, out of 8000000 for 9000
+ 54725 multiletter control sequences out of 15000+600000
+ 478101 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,12n,111p,1078b,2328s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dis
@@ -1973,7 +1977,7 @@ dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><
 /usr/share/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb></usr/share/texm
 f-dist/fonts/type1/public/wasy-type1/wasyb10.pfb>
-Output written on main.pdf (34 pages, 1101162 bytes).
+Output written on main.pdf (34 pages, 1103668 bytes).
 PDF statistics:
  526 PDF objects out of 1000 (max. 8388607)
  446 compressed objects within 5 object streams
