@@ -34,6 +34,14 @@ print_pbs_info(){
     echo PBS: current home directory is $PBS_O_HOME
     echo PBS: PATH = $PBS_O_PATH
     echo ------------------------------------------------------
+
+    # displaying some additional node info
+    # is handy for debugging some things or know if you are
+    # encountering any problematic nodes
+    echo ""
+    echo ------------------------------------------------------
+    pbsnodeinfo | head -n 2
+    pbsnodeinfo | grep $HOSTNAME
 }
 
 ###############################################
@@ -51,7 +59,7 @@ load_modules(){
     source /etc/profile.d/modules.sh
 
     #load R
-    module load atg/R/3.4.1-foss-2016a
+    module load r/3.6.2-foss-2019b
 }
 
 
