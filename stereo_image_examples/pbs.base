@@ -1,15 +1,32 @@
 #!/usr/bin/env bash
 
-#PBS -N install_packages
-#PBS -l ncpus=1
-#PBS -l mem=2GB
-#PBS -l walltime=20:00:00
-#PBS -o install_packages_stdout.out
-#PBS -e install_packages_stderr.out
+#PBS -N bnn
+#PBS -l ncpus=<NCPUS>
+#PBS -l mem=<MEMORY>
+#PBS -l walltime=<WALLTIME>
+#PBS -o stdout_<INDEX>.out
+#PBS -e stderr_<INDEX>.out
 
 # More info on PBS directives can be found here
 # http://qcd.phys.cmu.edu/QCDcluster/pbs/run_serial.html
-
+#
+# My base script for the TBNN project
+# Few key arguments that can be replaced using `sed`
+#
+# These are specified as with all capitals, and are:
+#  <OUTDIR>
+#  <CONFIGFILE>
+#  <DATASET>
+#  <DATASPLIT>
+#  <PLOTOUTPUT>
+#  <WALLTIME>
+#  <MEMORY>
+#  <NCPUS>
+#  <NGPUS>
+#
+#
+# Any of the path variables should be absolute paths
+# to make sure everything goes a bit nicer
 
 
 ###############################################
@@ -52,55 +69,40 @@ print_pbs_info(){
 #
 ###############################################
 
+
 load_modules(){
     #activate module environment
-    #NOTE: a recent HPC update means that you shouldn't need
-    #to do this anymore, but I have included as a sanity check
     source /etc/profile.d/modules.sh
-
-    #load R
-    module load r/3.6.2-foss-2019b
+    #load in the modules that we need
+    module load python/3.7.4-gcccore-8.3.0
+    # activate the virtual environment we need
+    source ~/p_3.7.4/bin/activate
 }
 
 
 copy_in(){
-    #copy some data to  your input directory
     #nothing to copy in on this script
-    #For empty bash functions, must put a colon in them,
-    #otherwise it will throw an error
     :
 }
 
 
 copy_out(){
     #nothing to copy out on this script
-    #For empty bash functions, must put a colon in them,
-    #otherwise it will throw an error
     :
 }
 
 
 
 run_program(){
-    #make sure we change to the current directory
-    #where this bash job script is
-    cd $PBS_O_WORKDIR/install_r_packages
-    # make sure the library directory exists
-    mkdir ~/R/library_3.6.2
-    Rscript ./install_r_packages.R
-    #this script installed all of the packages locally,
-    #since you do not have root access to HPC.
-    #This just means we need to let R now where we installed
-    #the new packages. This next command will save the variable
-    #in an R envirionment file to tell us where it is stored
-    echo 'R_LIBS_USER="~/R/library"' >  ~/.Renviron
+    cd $PBS_O_WORKDIR
+    python --version
+    which python
+    python create_depth_map.py <IMAGELIST> --max_disparity 16 --sigma 1 --lmbda 80000 --block_size 5
 }
 
 
 run_clean(){
     #nothing to clean for this script
-    #For empty bash functions, must put a colon in them,
-    #otherwise it will throw an error
     :
 }
 
@@ -111,6 +113,7 @@ run_clean(){
 #
 #
 ###############################################
+
 
 print_pbs_info
 load_modules

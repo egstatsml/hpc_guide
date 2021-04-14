@@ -3,14 +3,14 @@
 # breast_cancer_bt.R
 #
 # Simple script that will use boosted regression trees
-# to predict the presence of breast cancer based on 
+# to predict the presence of breast cancer based on
 # biopsy information
 #
 # The script can be invoked with
 #  Rscript breast_cancer_bt.R --ntrees <number_of_trees>
-# 
+#
 # By default, the number of trees is set to 10000, and will
-# be set to this value if you don't specify it 
+# be set to this value if you don't specify it
 #
 # Author:
 #  Ethan Goan - ej.goan@qut.edu.au
@@ -37,8 +37,8 @@ parseArgs <- function(){
   #   value supplied by the command line
   #Load in the arguments from the command line
   option_list = list(
-    make_option(c("-n", "--ntrees"), type="integer", default=10000, 
-                help="number of trees")); 
+    make_option(c("-n", "--ntrees"), type="integer", default=10000,
+                help="number of trees"));
   opt_parser = OptionParser(option_list=option_list);
   args = parse_args(opt_parser);
   return(args)
@@ -83,14 +83,14 @@ summarise_prediction <- function(predicted, test_data){
   #   of our models prediction
   #
 
-  
+
   # predicted is the output of the model
   # data is the ground truth data base for test data
   tp <- sum((predicted == 1) & (test_data$Class.bin == 1))
   fp <- sum((predicted == 1) & (test_data$Class.bin == 0))
   tn <- sum((predicted == 0) & (test_data$Class.bin == 0))
   fn <- sum((predicted == 0) & (test_data$Class.bin == 1))
-  
+
   acc <- (tp + tn) / (nrow(test_data))
   sens <- tp / (tp + fn)
   spec <- tn / (tn + fp)
@@ -128,6 +128,7 @@ main <- function(){
   # Returns:
   #  NA
 
+
   #parse in the command line args
   args <- parseArgs()
   #convert the dataset class labels to binary values
@@ -152,4 +153,3 @@ main <- function(){
 
 #invoke the main function
 main()
-

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 #PBS -N install_packages
-#PBS -l ncpus=1
+#PBS -l ncpus=4
 #PBS -l mem=2GB
-#PBS -l walltime=20:00:00
-#PBS -o install_packages_stdout.out
-#PBS -e install_packages_stderr.out
+#PBS -l walltime=02:00:00
+#PBS -o install_python_packages_stdout.out
+#PBS -e install_python_packages_stderr.out
 
 # More info on PBS directives can be found here
 # http://qcd.phys.cmu.edu/QCDcluster/pbs/run_serial.html
@@ -58,8 +58,10 @@ load_modules(){
     #to do this anymore, but I have included as a sanity check
     source /etc/profile.d/modules.sh
 
-    #load R
-    module load r/3.6.2-foss-2019b
+    #load python
+    module load python/3.7.4-gcccore-8.3.0
+    # activate the virtual environment we need
+    source ~/p_3.7.4/bin/activate
 }
 
 
@@ -82,18 +84,9 @@ copy_out(){
 
 
 run_program(){
-    #make sure we change to the current directory
-    #where this bash job script is
-    cd $PBS_O_WORKDIR/install_r_packages
-    # make sure the library directory exists
-    mkdir ~/R/library_3.6.2
-    Rscript ./install_r_packages.R
-    #this script installed all of the packages locally,
-    #since you do not have root access to HPC.
-    #This just means we need to let R now where we installed
-    #the new packages. This next command will save the variable
-    #in an R envirionment file to tell us where it is stored
-    echo 'R_LIBS_USER="~/R/library"' >  ~/.Renviron
+    # a bit easier than the R version, can
+    # just call pip install from here
+    pip install numpy scikit-learn opencv-python opencv-contrib-python
 }
 
 
