@@ -51,7 +51,7 @@ load_modules(){
     source /etc/profile.d/modules.sh
 
     #load R
-    module load atg/R/3.4.1-foss-2016a
+    module load r/3.6.2-foss-2019b
 }
 
 
@@ -76,7 +76,9 @@ copy_out(){
 run_program(){
     #make sure we change to the current directory
     #where this bash job script is
-    cd $PBS_O_WORKDIR
+    cd $PBS_O_WORKDIR/install_r_packages
+    # make sure the library directory exists
+    mkdir ~/R/library_3.6.2
     Rscript ./install_r_packages.R
     #this script installed all of the packages locally,
     #since you do not have root access to HPC.

@@ -17,7 +17,7 @@ Another scenario when this type of processing is helpful is for model validation
 %
 %
 %
-\par
+\subsubsection{Example: Experimenting with Different Model Configurations in Parallel}
 %
 %
 When looking at the contents of the \hltexttt{bt\_examples} directory, you will find a single R script \hltexttt{breast\_cancer\_bt.R} and ten batch scripts \hltexttt{batch\_bt\_XXXX.sh}. Each of these batch scripts will invoke the \hltexttt{breast\_cancer\_bt.R} script, though each script will supply a different command line argument to specify the number of trees we want to use in the model. We can sumbit batch jobs for all of these scripts using the following commands,
@@ -93,9 +93,89 @@ If you have named output files in the standard I have used throughout my example
 \end{minted}
 %
 %
+\subsubsection{Example: Preprocessing Large Number of Files In Parallel}
+%
+%
+Preprocessing functions are prime targets for parallelisation in this way, as we are usually assuming independence between samples in a lot of our models. I work a lot with images, and certain image preprocessing steps can be pretty time consuming, but this type of scheme could apply to any large data set where preprocessing is expensive (also images make it nicer to view \smiley)
+%
+%
+\par
+%
+%
+An example of expensive preprocessing methods in computer vision is computing depth (or disparity) maps from stereo images. The basic idea is that with a two cameras next to each other capturing the same scene, we can analyse them geometrically to compute depth similar to how we do. I have shown an example of what it looks like in Figure \ref{fig:disp}.
+%
+%
+\begin{figure}[!h]
+  \centering
+  \subfloat[][]{\includegraphics[width=0.5\linewidth]{./figs/left.jpg}}
+  \subfloat[][]{\includegraphics[width=0.5\linewidth]{./figs/right.jpg}}
+  \\
+  \subfloat[][]{\includegraphics[width=0.5\linewidth]{./figs/disp.jpg}}
+  \caption{Examples of left and right images used to estimate depth from a scene.}
+  \label{fig:disp}
+\end{figure}
+%
+%
+\par
+%
+%
+For larger images, this can be reasonably expensive to compute, and if we have a large dataset it can take a really long time. These properties make it a prime candidate for the type of parallelisation where we make the OS do all the hard scheduling work for us.
+%
+%
+\par
+%
+%
+The basic idea with this type of processing is first a normal program is created which is fed a list of files to perform the preprocessing operations on. This program then iterates over the samples within the list one by one until it reaches the end. The way we can parallelise this, is instead of having one large list with all the files we need to process, we can split that file up in to multiple seperate files. That way, we can submit individual jobs that operate over their own subset of images to process, and can save a lot of time\footnote{I have done exactly this for a project, and it literally saved me days in compute time, at the expense of about 15 minutes extra work.}.
+%
+%
+\par
+%
+%
+Just to summarise, the basic steps we need to do are,
+\begin{enumerate}
+  \item Create a single list of all files/images to process
+  \item Split that into multiple smaller files
+  \item Submit a batch job which operates over the images in each of the smaller files
+  \item Dance \smiley
+\end{enumerate}
+% 
+% 
+%
+%As with most things, the best way to learn it is to put it into practice, so thats what we are going to do. An example in this guide is created under the \hltexttt{stereo\_images\_example} that does this to a subset of real images from the Holopix Dataset [Citation]. Before looking at the code, we will copy the data across to where we can access it. It is currently on HPC in a shared directory, but is handy to copy across locally for us.
+%
+% %
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  # copy the data to the local directory
+  mkdir data
+  cp /work/SAIVT/hpc_guide_data/stereo_images/holopix50k/data/small/* ./data
+  # data will now be stored in the following structure
+  #  | image_key
+  #  |-- left.jpg
+  #  |-- right.jpg
+  # so within data there will be sub directories, and each sub directory will
+  # have a left/right image pair
+\end{minted}
+
+%
+% Now we want to create a single file that contains the directories of all those left/right image pairs. Is also handy to list it as an absolute path, as it makes it easier to work with. We then want to split all of the samples listed in that file into multiple smaller files. To do this, we can use the \hltexttt{split} command.
+%
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  # create one big list of all samples
+  ls -d $PWD/data > all_image_pairs.txt
+  # now split into multiple smaller files
+  # Here I am saying make it so that there are two lines per file
+  # This is a very small amount in reality but this is just to illustrate
+  # how to do it. 
+  split -l 2 -d image_pair_paths.txt image_ --additional-suffix=.txt
+\end{minted}
 %
 %
 %
+%If we have a look now, there will be 10 new files named \hltexttt{image\_00.txt, image\_01.txt ...}. These are the smaller lists of files to operate over, so we can submit a single job for each of these files.
+
+%\subsubsubsection{}
+
 \subsubsection{Tips for bulk Submitting Jobs}
 Bulk submitting jobs in this way relies on you designing your original code to handle command line arguments. Adopting this type of program design is extremely helpful during experimentation, and is a part of general good coding practices. Don't hard-code anything you think may even have the slightest possibility of ever changing. Command line arguments are a great way to develop software that is highly modular, and generally easy to use (as long as you document what you have done!).
 %

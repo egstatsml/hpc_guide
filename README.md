@@ -2,42 +2,8 @@
 
 This repo provides a quick reference guide on how to access and use the HPC facilities at QUT. Example scripts are supplied to install relevent packages, and demonstrate how to submit jobs to HPC.
 
-The complegte guide can be found in the PDF file listed above, and the associated TeX files in the [./tex](https://github.com/ethangoan/hpc_guide/tree/master/tex) directory. They are there if you want to add your own notes or edit anything. If you want to have access to this repo to make changes or add some examples, please let me know. This will be a living document that I will update periodically as I am always finding out new tips and tricks.
+## NOTES: Guide is undergoing big updates
+I am updating everything at the moment to include new info from the CDC Code Talk.
+Should all be updated in about a week (21/04/21) :)
 
-If you want to compile this document yourself, you will need to enable the `--shell-escape` flag to allow the package to properly format the code snippets.
-```bash
-pdflatex --shell-escape main.tex
-```
-
-## Installing R Packages
-
-The [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) script will submit a job to call the  [install_r_packages.R](./install_r_packages/install_r_packages.R) script, which will install the following packages:
-```
-              'tidyverse',
-              'lme4',
-              'randomForest',
-              'Rcpp',
-              'devtools',
-              'lubridate',
-              'readxl',
-              'broom',
-              'testthat',
-              'stringr',
-              'magrittr',
-              'mlbench',
-              'optparse',
-              'gbm'
-```
-
-If you want to install more packages, simply add the name of the package to the vector of package names in this install script, and submit the batch script  [install_packages_batch.sh](./install_r_packages/install_packages_batch.sh) again.
-
-
-## Examples
-
-Some example jobs are listed in the [./bt_examples](https://github.com/ethangoan/hpc_guide/tree/master/bt_examples) for a boosted regression tree problem to predict the presence of breast cancer based in biopsy measurements. Data is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)). In there are 10 seperate batch scripts for submitting jobs to the PBS queue. Each of these jobs will load in the required modules needed, and call the [breast_cancer_bt.R](./bt_examples/breast_cancer_bt.R) script with a different command line argument, indicating how many trees to use for each model. Please refer to the PDF guide for more info or see the [cheatsheet](https://github.com/ethangoan/hpc_guide/blob/master/commands_cheatsheet.md) for a non-exhaustive list of HPC commands.
-
-
-Any questions, queries, suggestions, or if you me want to add to this guide, please just let me know.
-
-Ethan
-ej.goan@qut.edu.au
+Can pull the Guide now, but is from an earlier state and a few things won't work properly. Just make sure you come back in a weeks time :)

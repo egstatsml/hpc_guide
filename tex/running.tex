@@ -59,31 +59,83 @@ From the output of this, you may begin to appreciate why not all of the packages
 %
 \\
 %
+\subsubsection{R Modules}
+Output of \hltexttt{module avail r}
 \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
-  #load in R
-  module load atg/R/3.4.1-foss-2016a
-
-  #load MATLAB
-  #many different versions available
-  #only need to load one you need
-  module load matlab/2016a
-  module load matlab/2016b
-  module load matlab/2017b
-
-  #load mathematica
+  #load in R (output of module avail r)
+  -------------- /pkg/suse12/modules/lang --------------
+  r/3.1.0-foss-2016a              r/3.4.2-foss-2017a             
+  r/3.2.0-foss-2015a-bare         r/3.5.1-foss-2018a             
+  r/3.3.1-foss-2016a              r/3.6.1-foss-2019a             
+  r/3.3.1-intel-2016b(default)    r/3.6.2-foss-2019b
+  r/3.4.2-bioconductor-foss-2017a r/4.0.3-foss-2020b
+\end{minted}
+%
+%
+\subsubsection{Matlab Modules}
+Output of \hltexttt{module avail matlab}
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  -------------- /pkg/suse12/modules/math --------------
+  matlab/2016b matlab/2017a matlab/2017b
+  matlab/2018b matlab/2019a matlab/2021a
+\end{minted}
+%
+%
+\subsubsection{Mathematica Modules}
+Output of \hltexttt{module avail mathematica}
+  \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  -------------- /pkg/suse12/modules/math --------------
   module load mathematica/11.2.0-linux-x86_64
+\end{minted}
 
-  #load Python
-  #again many different versions available
-  module load python/2.7.13-foss-2017a-foss
-  module load python/3.5.1-foss-2016a
-  python/3.6.4-intel-2017a
+\subsubsection{Python Modules}
+Output of \hltexttt{module avail python}
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  -------------- /pkg/suse12/modules/lang --------------
+python/2.7.10-intel-2015b                  python/2.7.15-intel-2018b
+python/2.7.11-foss-2016a                   python/2.7.16-foss-2019a
+python/2.7.11-intel-2016a                  python/2.7.16-gcccore-7.3.0
+python/2.7.11-intel-2016b                  python/2.7.16-gcccore-8.3.0
+python/2.7.11-iomkl-2016.07                python/2.7.18-gcccore-10.2.0
+python/2.7.11-iomkl-2016.09-gcc-4.9.3-2.25 python/2.7.18-gcccore-9.3.0
+python/2.7.12-foss-2016a-repair            python/2.7.5-foss-2017a
+python/2.7.12-foss-2016b                   python/3.5.1-foss-2016a(default)
+python/2.7.12-gmpolf-2016b                 python/3.5.2-foss-2016b
+python/2.7.12-intel-2016a                  python/3.5.2-intel-2016b
+python/2.7.12-intel-2016b                  python/3.6.1-foss-2016a
+python/2.7.13-foss-2017a-foss              python/3.6.1-foss-2017a
+python/2.7.13-foss-2018a                   python/3.6.1-foss-2017a-busco
+python/2.7.13-intel-2017a                  python/3.6.1-intel-2017a
+python/2.7.13-iomkl-2016.07                python/3.6.2-foss-2017b
+python/2.7.14-foss-2016a                   python/3.6.3-foss-2017b
+python/2.7.14-foss-2016a-tf                python/3.6.4-foss-2016a
+python/2.7.14-foss-2017b                   python/3.6.4-foss-2018a
+python/2.7.14-foss-2018a                   python/3.6.4-foss-2018a-pytorch-0.3.1
+python/2.7.14-gcccore-6.4.0-bare           python/3.6.4-foss-2018a-pytorch-0.5.0
+python/2.7.14-intel-2017a                  python/3.6.4-intel-2017a
+python/2.7.15-foss-2016a                   python/3.7.1-foss-2018a
+python/2.7.15-foss-2018a                   python/3.7.2-foss-2018a
+python/2.7.15-foss-2018b                   python/3.7.2-gcccore-8.2.0
+python/2.7.15-foss-2019a                   python/3.7.2-gcccore-8.3.0
+python/2.7.15-foss-2019b                   python/3.7.4-gcccore-8.3.0
+python/2.7.15-fosscuda-2018b               python/3.8.2-gcccore-9.3.0
+python/2.7.15-gcccore-7.3.0-bare           python/3.8.6-gcccore-10.2.0
+python/2.7.15-gcccore-8.2.0                python/3.9.1-gcccore-10.2.0
+python/2.7.15-gcccore-8.3.0                python/3.9.1-gcccore-9.3.0
+python/2.7.15-gcccore-8.3.0-bare
 \end{minted}
 %
 \\
 \par
 %
-For this guide, we will use R as an example, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \hltexttt{module load atg/R/3.4.1-foss-2016a}. Once loaded, you can start R by simply typing \hltexttt{R} into the terminal.
+\begin{story}
+  \textbf{NOTE:}
+  \\
+  Python2 is now deprecated. Don't use it for new projects.
+\end{story}
+%
+%
+For this guide, we will use R and Python as examples, though you can adapt it for other programming languages with only small modification. So first we load in the R module with \hltexttt{module load load r/3.6.2-foss-2019b}. Once loaded, you can start R by simply typing \hltexttt{R} into the terminal.
 %
 %
 %
@@ -105,27 +157,123 @@ If you have found that you have loaded in an incorrect module, or you have loade
   module purge
 \end{minted}
 %
-\subsection{Installing R Packages}
+%
+%
+\subsection{Installing Additional Packages}
+%
+%
+For your given projects, you are more than likely going to need to install some additional packages, regardless of your programming language of choice.
+Im going to go through a quick rundown of how I would suggest doing this for both R and Python, as I believe these show the two different methods to seprate packages from different language versions; one being relatively easy, and the other being more difficult (at least in my opinion).
+%
+%
+\subsubsection{Installing Python Packages}
+\label{sec:install_python}
+% 
+%
+Installing additional Python packages is relatively simple, and for the most part pretty quick. The main component that makes it a bit easier than other languages is the virtual environment \hltexttt{virtualenv} features. A virtual environment in Python allows you to have an isolated, environment wide container for a specific project. This makes it really easy to install new packages for specific project, a specific compiler settings or Python version. The basic procedure is,
+%
+%
+%
+\begin{enumerate}
+  \item Load in the Python Module we want
+  \item Create virtual environment
+  \item Load virtual environment
+  \item Install packages as normal
+\end{enumerate}
+%
+%
+Once you have loaded the virtual environment you have created, installing packed like you normally would with \hltexttt{pip} will just go straight under this isolated environment. An example could look like,
+%
+%
+%
+\begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
+  # submit an interactive job to HPC
+  # Reminder, always submit a job before you do pretty much anything
+  qsub -I -S /bin/bash -l walltime=HH:MM:SS,mem=XXXg,ncpus=YYY -N ZZZ
+  # lets just make sure we are starting from our home directory
+  cd ~
+  # load in the python module (1)
+  module load python/3.7.4-gcccore-8.3.0
+  # create the virtualenv (2)
+  # im going to call this virtual environment p_3.7.4
+  python -m venv p_3.7.4
+  # activate the virtual environment (3)
+  source ~/p_3.7.4/bin/activate
+  # install packages like we normally would
+  pip install <package_name>
+  # if you need to deactivate the virtual environment, can just run
+  deactivate
+\end{minted}
+%
+%
+And that is pretty much it for Python. Most of the packages should install pretty quickly, so I would recommend submitting an interactive job like this and then just manually installing all the libraries you need.
+%
+%
+\par
+%
+%
+It is natural to think, why am I bothering with virtual environments here? In the short term, you could very well get away without using them, but in the long run a new version and module for python will come out and you will want to switch to that. Having a virtual environment for a specific Python version allows you to move on to a new version of Python without getting weird conflict issues or compilation errors. Instead of trying to manage the conflicts within the changfe of Python versions, I can just simply create a new virtual environment and install everything I need again. It might seem like installing everything again will take a long time, but the reality is it will take almost no time when compared with the alternative of managing conflicting package versions, compiler versions etc.
+%
+%
+%
+\par
+%
+%
+%
+Using virtual environments is also just general good practice. Will often find that certain packages require exact, explicit versions of another package. It is often the case that installing a specific version of a package can break a dependency of another more important package you already have installed. With a virtual environment, you can solve this issue without too much of an issue. You can create a new virtual environment for the problematic package with the strict and incompatible dependency, and just activate that whenever you need it. 
+%
+%
+%
+\subsubsection{Installing R Packages}
 \label{sec:install}
-If you try and run an R script now, you will likely find that it will throw an error saying that a package isn't available. The module we loaded before was the base R module, and unfortunately there aren't many R packages pre-installed on the Lyra cluster. This isn't a major limitation, we just need to install them ourselves. An pre-made R script has already been made, \hltexttt{install\_r\_packages.R}, which will install many of the common packages you will need. After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands,
-\\
+Now for R's turn at installing packages, and it is a little bit tougher for R (but only a little bit). The main reason it is tougher is because virtual environments aren't as well supported in R to help keep things isolated\footnote{Though it looks like there is active development to make it a bit nicer https://rstudio.github.io/renv/articles/renv.html}.
+%
+%
+\par
+%
+%
+%
+Similar to Python above, we want to install new packages that are compatible with the R version we are using. For example, at the moment you may be using R 3.6.2, but maybe the time will come where you are forced to move to 4.0.3? When making a shift, it is expected to encounter conflicts with existing versions, particularly with R since many packages rely on compiled \hltexttt{Rcpp} code. For this reason, I am making the install procedure slightly more difficult to enable us to have a more general installation method that will allow us to move to a new version of R when needed\footnote{If anyone has a better way to make the installation of new packages flexible and simpler, please let me know and I would be happy to update it. I tried not explicitly setting the \hltexttt{lib} directory for different R versions, but R still installed user packages to the same location, and this is what I want to avoid.}.
+%
+%
+%
+\par
+%
+%
+%
+To show how to install packages for R, I have provided an example script \hltexttt{install\_r\_packages.R}, which will install many of the common packages you will need (some of them are likely already installed though). After you have cloned the example repository listed earlier, you can run the script to install all of the base packages with these commands for R 3.6.2,
+%
+%
+%
 \par
 \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
-  # make sure you have submitted a job to run this command!
-  # the instructions above will help you submit an interactive job
-
-  # change to home directory
+  # submit an interactive job to HPC
+  # Reminder, always submit a job before you do pretty much anything
+  qsub -I -S /bin/bash -l walltime=HH:MM:SS,mem=XXXg,ncpus=YYY -N ZZZ
+  # load in the R module
+  module load r/3.6.2-foss-2019b
+  # create directory where user packages will be installed
+  mkdir -p R/library_3.6.2
+  # set the R environment variable to say this is where to look
+  # for additional user libraries
+  echo 'R_LIBS_USER="~/R/library_3.6.2"' > ~/.Renviron
+  # lets just make sure we are starting from our home directory
   cd ~
   # pull the repo for this guide
   git clone https://github.com/ethangoan/hpc_guide
   # change directory to the repo
-  cd hpc_guide
-  # now run the install script
-  Rscript install_r_packages.R
+  cd hpc_guide/install_r_packages
+  # now run the install script using the install_r_packages.sh script
+  # the additional command line argument here tells the script where to
+  # install the new packages to.
+  Rscript install_r_packages.R ~/R/library_3.6.2
 \end{minted}
 %
-\\
+%
+%
 \par
+%
+%
 %
 This will take a while to run (a few hours I think), so you can either leave your terminal open and let the program run, or you can use the instructions in the next section, where we will learn to submit a batch job that will install all of the packages for you.
 %
@@ -135,30 +283,39 @@ This will take a while to run (a few hours I think), so you can either leave you
   If you ran the above interactive script to install all the packages, once it is done there is one more command you will need to run. In this script, packages will be installed into \texttt{\textasciitilde R/library} directory. This needs to be done because installing packages on HPC is slightly different to that of your desktop machine, as you don't have root access on HPC. To rectify this, we just need to tell R where to look to find the installed packages. To do this, run the command
   \\
   \begin{minted}[fontsize=\footnotesize, fontfamily=courier,escapeinside=||]{bash}
-  echo 'R_LIBS_USER="~/R/library"' > |~/.Renviron|
+    echo 'R_LIBS_USER="~/R/library"' > |~/.Renviron|
   \end{minted}
   in the terminal. If you install all the packages using the batch script example in the next section, you won't need to run this command, it will do it for you.
 \end{story}
+%
+%
+%
+%
 \subsection{Submitting Batch Jobs}
 \label{sec:batch}
-In the previous example, we saw how to submit an interactive job, load in R modules and install some base packages in an interactive session. We can achieve this same result by submitting a batch job, which will run on HPC without us having to intervene and leave the terminal open. Batch jobs are useful for programs that require a long time to run, since we can simply submit them and then forget about them (while they running at least).
+In the previous example, we saw how to submit an interactive job, load in R or Python modules and install some base packages in an interactive session. We can achieve this same result by submitting a batch job, which will run on HPC without us having to intervene and leave the terminal open. Batch jobs are useful for programs that require a long time to run, since we can simply submit them and then forget about them (while they running at least).
+%
 %
 \par
 %
 %
-Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \hltexttt{batch\_jobs/install\_packages\_batch.sh} is supplied. This is a Bash script that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives.
+Like submitting an interactive job, we need to specify the time and computational resources we require. Unlike interactive jobs, we specify these requirements through a configuration file. In the guide repository, an example batch configurations script called \hltexttt{install\_r\_packages/install\_packages\_batch.sh} and \hltexttt{install\_python\_packages/install\_packages\_batch.sh} are supplied. These are Bash scripts that is interpreted by the PBS scheduler, and specifies our requirements and which program we want to run. Computational requirements are listed at the top of the file in the commented out section. These are called the PBS directives, and are shown as an example below.
+%
+%
 \\
+%
+%
 \par
 \begin{minted}[bgcolor=Light, frame=single, fontsize=\footnotesize, fontfamily=courier]{bash}
   #!/usr/bin/env bash
-
+  
   #PBS -N install_packages
   #PBS -l ncpus=1
   #PBS -l mem=2GB
   #PBS -l walltime=20:00:00
   #PBS -o install_packages_stdout.out
   #PBS -e install_packages_stderr.out
-
+  
 \end{minted}
 %
 \\
@@ -169,7 +326,7 @@ The main differences here is the first line which is called the Shebang. This MU
 \par
 %
 %
-Further down in the script you will see helper functions that will load all of the modules we need (for this example we only need the R module) and a function which invokes the R script to install the packages we need. These helper functions are called at the end of the script when the job has been submitted and accepted by the scheduler. We can submit this job using the following command,
+Further down in the script you will see helper functions that will load all of the modules we need (for this example we only need the R or python module) and a function which invokes the R script to install the packages we need (for Python there isn't a python script called, as we can do it easily from the bash whilst using virtual environments). These helper functions are called at the end of the script when the job has been submitted and accepted by the scheduler. We can submit this job using the following command,
 %
 %
 \\
@@ -181,9 +338,19 @@ Further down in the script you will see helper functions that will load all of t
   git clone https://github.com/ethangoan/hpc_guide
   #change into repo directory
   cd ~/hpc_guide
-  #change to the directory where the config file is
-  cd ./batch_jobs
-  #submit the batch job with qsub
+  # PYTHON PACKAGES INSTALL EXAMPLE
+  # submit the batch job with qsub to install
+  # python packages under the virtual environment specified earilier
+  # change into required directory then subit batch job with qsub
+  # NOTE: this assumes you already made the virtual environment
+  # discussed in earlier sections
+  cd ./install_python_packeges
+  qsub install_packages_batch.sh
+  # R PACKAGES INSTALL EXAMPLE
+  # move back to the root directory for this guide
+  cd ~/hpc_guide
+  # change to R directory to install packages with script
+  cd ./install_r_packeges
   qsub install_packages_batch.sh
 \end{minted}
 \\
@@ -214,7 +381,14 @@ This will give you information on all the jobs you have submitted. You will be a
 \subsubsection{Installing More Packages}
 %
 %
-While running this installation script will install many of the most common packages, it is unlikely that it will install everything you require. To install more packages, I would suggest modifying the \hltexttt{install\_r\_packages.R} script to include packages to want to install. There is a slight difference to installing packages when compared with a typical desktop machine you own. Since you won't have root/administrator access on HPC, you will need to install the packages locally. The \hltexttt{install\_r\_packages.R} installs the packages locally and sets the relevant path variables so that R can find the packages we installed. To install more packages, simply edit the \hltexttt{packages} vector in that script and resubmit the batch job using the same commands as before.
+While running these installation script will install some common packages, it is unlikely that it will install everything you require. To install more packages for R, I would suggest modifying the \hltexttt{install\_r\_packages.R} script to include packages to want to install. There is a slight difference to installing packages when compared with a typical desktop machine you own. Since you won't have root/administrator access on HPC, you will need to install the packages locally. The \hltexttt{install\_r\_packages.R} installs the packages locally and sets the relevant path variables so that R can find the packages we installed. To install more packages, simply edit the \hltexttt{packages} vector in that script and resubmit the batch job using the same commands as before.
+%
+%
+\par
+%
+%
+%
+For Python, I would recommend using the interactive method used earlier in Section \ref{sec:install_python}.
 %
 %
 \subsubsection{Quick Note on Python}

@@ -1,66 +1,82 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {british}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Preface}{3}{section*.3}% 
+\contentsline {section}{Preface}{4}{section*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Introduction and Preliminaries}{5}{section.1}% 
+\contentsline {section}{\numberline {1}Introduction and Preliminaries}{6}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Getting HPC Access}{5}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.1}Getting HPC Access}{6}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.1}Mac and Linux}{5}{subsubsection.1.1.1}% 
+\contentsline {subsubsection}{\numberline {1.1.1}Mac and Linux}{6}{subsubsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2}Windows}{6}{subsubsection.1.1.2}% 
+\contentsline {subsubsection}{\numberline {1.1.2}Windows}{7}{subsubsection.1.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Once Logged In}{6}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.2}Once Logged In}{7}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Transferring Files to HPC}{7}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.3}Transferring Files to HPC}{8}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Mounting HPC Drive on Your Machine}{8}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.4}Mounting HPC Drive on Your Machine}{9}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.1}Mac and Linux}{9}{subsubsection.1.4.1}% 
+\contentsline {subsubsection}{\numberline {1.4.1}Mac and Linux}{10}{subsubsection.1.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.2}Windows}{9}{subsubsection.1.4.2}% 
+\contentsline {subsubsection}{\numberline {1.4.2}Windows}{10}{subsubsection.1.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}Logging in When Not On QUT's Network}{10}{subsection.1.5}% 
+\contentsline {subsection}{\numberline {1.5}Logging in When Not On QUT's Network}{11}{subsection.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Submitting Jobs}{10}{section.2}% 
+\contentsline {section}{\numberline {2}Submitting Jobs}{11}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Interactive Jobs}{11}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.1}Interactive Jobs}{12}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Modules}{12}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.2}Modules}{13}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Installing R Packages}{14}{subsection.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.1}R Modules}{13}{subsubsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Submitting Batch Jobs}{15}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Matlab Modules}{14}{subsubsection.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.1}Installing More Packages}{17}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Mathematica Modules}{14}{subsubsection.2.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.4.2}Quick Note on Python}{18}{subsubsection.2.4.2}% 
+\contentsline {subsubsection}{\numberline {2.2.4}Python Modules}{14}{subsubsection.2.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Examples}{18}{section.3}% 
+\contentsline {subsection}{\numberline {2.3}Installing Additional Packages}{16}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Multicore Processing - Let the OS do the Hard Work}{18}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Installing Python Packages}{16}{subsubsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}Tips for bulk Submitting Jobs}{21}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {2.3.2}Installing R Packages}{18}{subsubsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{22}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {2.4}Submitting Batch Jobs}{20}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Quick Guide}{23}{section.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Installing More Packages}{23}{subsubsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Other Tips, Tricks and some Common Errors.}{24}{section.5}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Quick Note on Python}{23}{subsubsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1} Some of the Commands in this guide aren't working \mbox {\fontencoding {U}\fontfamily {wasy}\selectfont \char 47}}{24}{subsection.5.1}% 
+\contentsline {section}{\numberline {3}Examples}{23}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Installed R Packages aren't loading}{24}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {3.1}Multicore Processing - Let the OS do the Hard Work}{23}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Installing More Packages}{24}{subsection.5.3}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Example: Experimenting with Different Model Configurations in Parallel}{24}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}HPC is being painfully slow \mbox {\fontencoding {U}\fontfamily {wasy}\selectfont \char 47}}{25}{subsection.5.4}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Example: Preprocessing Large Number of Files In Parallel}{27}{subsubsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Error - /usr/bin/env: 'bash': No such file or directory}{25}{subsection.5.5}% 
+\contentsline {subsubsection}{\numberline {3.1.3}Tips for bulk Submitting Jobs}{28}{subsubsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}``Ethan, your way sucks and I have a much better way to achieve this''}{26}{subsection.5.6}% 
+\contentsline {subsection}{\numberline {3.2}Multicore Processing - The Hard Way}{29}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}``I have tried and tried, but nothing is working''}{26}{subsection.5.7}% 
+\contentsline {section}{\numberline {4}Quick Guide}{31}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Error loading modules: If module is not a typo you can use command-not-found to lookup the package that contains it, like this: cnf module}{26}{subsection.5.8}% 
+\contentsline {section}{\numberline {5}Other Tips, Tricks and some Common Errors.}{32}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1} Some of the Commands in this guide aren't working \mbox {\fontencoding {U}\fontfamily {wasy}\selectfont \char 47}}{32}{subsection.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Installed R Packages aren't loading}{32}{subsection.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Installing More Packages}{32}{subsection.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}HPC is being painfully slow \mbox {\fontencoding {U}\fontfamily {wasy}\selectfont \char 47}}{33}{subsection.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5}Error - /usr/bin/env: 'bash': No such file or directory}{33}{subsection.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6}``Ethan, your way sucks and I have a much better way to achieve this''}{34}{subsection.5.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.7}``I have tried and tried, but nothing is working''}{34}{subsection.5.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.8}Error loading modules: If module is not a typo you can use command-not-found to lookup the package that contains it, like this: cnf module}{34}{subsection.5.8}%
