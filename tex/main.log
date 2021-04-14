@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.13)  13 APR 2021 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.12)  14 APR 2021 11:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1610,6 +1610,11 @@ Package biblatex Info: ... file 'main.bbl' not found.
 No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 125.
 Package biblatex Info: Reference segment=0 on input line 125.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 13
+6.
+(/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 136.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1618,6 +1623,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 136.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 136
 .
+
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1633,17 +1639,11 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 13
-6.
-
-(/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
 Package epstopdf Info: Source file: <./figs/qut.eps>
-(epstopdf)                    date: 2021-04-13 10:22:43
+(epstopdf)                    date: 2021-04-14 06:50:33
 (epstopdf)                    size: 3474 bytes
 (epstopdf)             Output file: <./figs/qut-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-13 10:24:00
+(epstopdf)                    date: 2021-04-14 06:50:33
 (epstopdf)                    size: 2902 bytes
 (epstopdf)             Command: <epstopdf --outfile=./figs/qut-eps-converted-to
 .pdf ./figs/qut.eps>
@@ -1904,6 +1904,8 @@ File: ./figs/disp.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./figs/disp.jpg  used on input line 113.
 (pdftex.def)             Requested size: 186.72122pt x 105.02039pt.
  [27 <./figs/left.jpg> <./figs/right.jpg> <./figs/disp.jpg>]
+(./_minted-main/989DF314C425F91D0F95A923E73723F15093E84BEA004B2911D4DA186861F6D
+B.pygtex)
 (./_minted-main/7D5A245A9AF2846D13AE4C628A44DCB75093E84BEA004B2911D4DA186861F6D
 B.pygtex) [28] [29]) [30] (./quick.tex) [31] (./other.tex
 
@@ -1948,11 +1950,11 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 38581 strings out of 479383
- 773358 string characters out of 5875830
- 1658281 words of memory out of 5000000
- 54720 multiletter control sequences out of 15000+600000
- 477662 words of font info for 114 fonts, out of 8000000 for 9000
+ 38587 strings out of 479383
+ 773777 string characters out of 5875830
+ 1658354 words of memory out of 5000000
+ 54723 multiletter control sequences out of 15000+600000
+ 477881 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,12n,111p,1078b,2328s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dis
@@ -1971,7 +1973,7 @@ dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><
 /usr/share/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb></usr/share/texm
 f-dist/fonts/type1/public/wasy-type1/wasyb10.pfb>
-Output written on main.pdf (34 pages, 1097982 bytes).
+Output written on main.pdf (34 pages, 1101162 bytes).
 PDF statistics:
  526 PDF objects out of 1000 (max. 8388607)
  446 compressed objects within 5 object streams
